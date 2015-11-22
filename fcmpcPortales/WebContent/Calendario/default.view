@@ -1,0 +1,290 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<view>
+  <property name='pageManagedBean' value='CalendarioDefaultviewView' />
+  <property name='preferencesBean' value='Calendario' />
+  <design-time-attribute name='portlet' value='Calendario' />
+  <control component-type='com.webmethods.caf.faces.output.ErrorMessages' renderer-type='com.webmethods.caf.faces.output.ErrorMessages'>
+    <property name='id' value='messages' />
+  </control>
+  <control component-type='com.webmethods.caf.faces.command.CommandForm' renderer-type='com.webmethods.caf.faces.Form'>
+    <property name='defaultFocus' value='_first' />
+    <property name='id' value='defaultForm' />
+    <control component-type='com.webmethods.caf.faces.panel.StaticRow' renderer-type='com.webmethods.caf.faces.panel.StaticRow'>
+      <property name='id' value='staticRow3' />
+      <control component-type='com.webmethods.caf.faces.panel.StaticCell' renderer-type='com.webmethods.caf.faces.panel.StaticCell'>
+        <property name='id' value='staticCell3' />
+      </control>
+    </control>
+    <control component-type='com.webmethods.caf.faces.panel.PropertyGroup' renderer-type='com.webmethods.caf.faces.panel.PageGroup'>
+      <property name='id' value='pageGroup' />
+      <property name='label' value='#{CalendarioDefaultviewView.nmes}' />
+      <control component-type='com.webmethods.caf.faces.table.AsyncTable' renderer-type='com.webmethods.caf.faces.table.AsyncTable'>
+        <property name='footerClass' value='portlet-section-footer' />
+        <property name='headerClass' value='portlet-section-subheader' />
+        <property name='id' value='asyncTable1' />
+        <property name='rowClasses' value='portlet-section-body,portlet-section-alternate' />
+        <property name='rows' value='10' />
+        <property name='selectedRowClass' value='portlet-section-selected' />
+        <property name='value' value='#{CalendarioDefaultviewView.generaCalendario.result.generaCalendarioResponse.salida.mes}' />
+        <property name='var' value='me' />
+        <property name='width' value='100%' />
+        <facet name='footer'>
+          <control component-type='com.webmethods.caf.faces.table.PrevNext' renderer-type='com.webmethods.caf.faces.table.PrevNext'>
+            <property name='id' value='prevNext' />
+            <control component-type='javax.faces.HtmlPanelGroup' renderer-type='com.webmethods.caf.faces.panel.BlockPanel'>
+              <property name='id' value='blockPanel' />
+              <property name='style' value='text-align:center;' />
+              <control component-type='com.webmethods.caf.faces.table.DataTotal' renderer-type='com.webmethods.caf.faces.table.DataTotal'>
+                <property name='id' value='dataTotal' />
+              </control>
+            </control>
+          </control>
+        </facet>
+        <control component-type='com.webmethods.caf.faces.table.html.HtmlTableColumn' renderer-type='com.webmethods.caf.faces.render.table.IExtendedColumnRenderer'>
+          <property name='id' value='htmlTableColumn' />
+          <property name='label' value='Dom' />
+          <property name='sort' value='#{me.dom}' />
+          <facet name='header'>
+            <control component-type='javax.faces.HtmlOutputText' renderer-type='com.webmethods.caf.faces.Text'>
+              <property name='id' value='htmlOutputText1' />
+              <property name='raw' value='true' />
+              <property name='value' value='Dom' />
+            </control>
+          </facet>
+          <control component-type='com.webmethods.caf.faces.panel.StaticRow' renderer-type='com.webmethods.caf.faces.panel.StaticRow'>
+            <property name='id' value='staticRow' />
+            <control component-type='com.webmethods.caf.faces.panel.StaticCell' renderer-type='com.webmethods.caf.faces.panel.StaticCell'>
+              <property name='id' value='staticCell' />
+              <control component-type='javax.faces.HtmlOutputText' renderer-type='com.webmethods.caf.faces.Text'>
+                <property name='id' value='htmlOutputText2' />
+                <property name='raw' value='true' />
+                <property name='value' value='#{me.dom}' />
+              </control>
+            </control>
+          </control>
+          <control component-type='com.webmethods.caf.faces.panel.StaticRow' renderer-type='com.webmethods.caf.faces.panel.StaticRow'>
+            <property name='height' value='60px' />
+            <property name='id' value='staticRow1' />
+            <control component-type='com.webmethods.caf.faces.panel.StaticCell' renderer-type='com.webmethods.caf.faces.panel.StaticCell'>
+              <property name='id' value='staticCell1' />
+              <control component-type='com.webmethods.caf.faces.output.FormattedText' renderer-type='com.webmethods.caf.faces.output.FormattedText'>
+                <property name='id' value='htmlOutputText4' />
+                <property name='value' value='#{me.domAct}' />
+              </control>
+            </control>
+          </control>
+        </control>
+        <control component-type='com.webmethods.caf.faces.table.html.HtmlTableColumn' renderer-type='com.webmethods.caf.faces.render.table.IExtendedColumnRenderer'>
+          <property name='id' value='htmlTableColumn2' />
+          <property name='label' value='Lun' />
+          <property name='sort' value='#{me.lun}' />
+          <facet name='header'>
+            <control component-type='javax.faces.HtmlOutputText' renderer-type='com.webmethods.caf.faces.Text'>
+              <property name='id' value='htmlOutputText5' />
+              <property name='raw' value='true' />
+              <property name='value' value='Lun' />
+            </control>
+          </facet>
+          <control component-type='com.webmethods.caf.faces.panel.StaticRow' renderer-type='com.webmethods.caf.faces.panel.StaticRow'>
+            <property name='id' value='staticRow2' />
+            <control component-type='com.webmethods.caf.faces.panel.StaticCell' renderer-type='com.webmethods.caf.faces.panel.StaticCell'>
+              <property name='id' value='staticCell2' />
+              <control component-type='javax.faces.HtmlOutputText' renderer-type='com.webmethods.caf.faces.Text'>
+                <property name='id' value='htmlOutputText6' />
+                <property name='raw' value='true' />
+                <property name='value' value='#{me.lun}' />
+              </control>
+            </control>
+          </control>
+          <control component-type='com.webmethods.caf.faces.panel.StaticRow' renderer-type='com.webmethods.caf.faces.panel.StaticRow'>
+            <property name='height' value='60px' />
+            <property name='id' value='staticRow3' />
+            <control component-type='com.webmethods.caf.faces.panel.StaticCell' renderer-type='com.webmethods.caf.faces.panel.StaticCell'>
+              <property name='id' value='staticCell3' />
+              <control component-type='com.webmethods.caf.faces.output.FormattedText' renderer-type='com.webmethods.caf.faces.output.FormattedText'>
+                <property name='id' value='htmlOutputText8' />
+                <property name='value' value='#{me.lunAct}' />
+              </control>
+            </control>
+          </control>
+        </control>
+        <control component-type='com.webmethods.caf.faces.table.html.HtmlTableColumn' renderer-type='com.webmethods.caf.faces.render.table.IExtendedColumnRenderer'>
+          <property name='id' value='htmlTableColumn4' />
+          <property name='label' value='Mar' />
+          <property name='sort' value='#{me.mar}' />
+          <facet name='header'>
+            <control component-type='javax.faces.HtmlOutputText' renderer-type='com.webmethods.caf.faces.Text'>
+              <property name='id' value='htmlOutputText9' />
+              <property name='raw' value='true' />
+              <property name='value' value='Mar' />
+            </control>
+          </facet>
+          <control component-type='com.webmethods.caf.faces.panel.StaticRow' renderer-type='com.webmethods.caf.faces.panel.StaticRow'>
+            <property name='id' value='staticRow5' />
+            <control component-type='com.webmethods.caf.faces.panel.StaticCell' renderer-type='com.webmethods.caf.faces.panel.StaticCell'>
+              <property name='id' value='staticCell5' />
+              <control component-type='javax.faces.HtmlOutputText' renderer-type='com.webmethods.caf.faces.Text'>
+                <property name='id' value='htmlOutputText10' />
+                <property name='raw' value='true' />
+                <property name='value' value='#{me.mar}' />
+              </control>
+            </control>
+          </control>
+          <control component-type='com.webmethods.caf.faces.panel.StaticRow' renderer-type='com.webmethods.caf.faces.panel.StaticRow'>
+            <property name='height' value='60px' />
+            <property name='id' value='staticRow4' />
+            <control component-type='com.webmethods.caf.faces.panel.StaticCell' renderer-type='com.webmethods.caf.faces.panel.StaticCell'>
+              <property name='id' value='staticCell4' />
+              <control component-type='com.webmethods.caf.faces.output.FormattedText' renderer-type='com.webmethods.caf.faces.output.FormattedText'>
+                <property name='id' value='htmlOutputText12' />
+                <property name='value' value='#{me.marAct}' />
+              </control>
+            </control>
+          </control>
+        </control>
+        <control component-type='com.webmethods.caf.faces.table.html.HtmlTableColumn' renderer-type='com.webmethods.caf.faces.render.table.IExtendedColumnRenderer'>
+          <property name='id' value='htmlTableColumn6' />
+          <property name='label' value='Mie' />
+          <property name='sort' value='#{me.mie}' />
+          <facet name='header'>
+            <control component-type='javax.faces.HtmlOutputText' renderer-type='com.webmethods.caf.faces.Text'>
+              <property name='id' value='htmlOutputText13' />
+              <property name='raw' value='true' />
+              <property name='value' value='Mie' />
+            </control>
+          </facet>
+          <control component-type='com.webmethods.caf.faces.panel.StaticRow' renderer-type='com.webmethods.caf.faces.panel.StaticRow'>
+            <property name='id' value='staticRow6' />
+            <control component-type='com.webmethods.caf.faces.panel.StaticCell' renderer-type='com.webmethods.caf.faces.panel.StaticCell'>
+              <property name='id' value='staticCell6' />
+              <control component-type='javax.faces.HtmlOutputText' renderer-type='com.webmethods.caf.faces.Text'>
+                <property name='id' value='htmlOutputText14' />
+                <property name='raw' value='true' />
+                <property name='value' value='#{me.mie}' />
+              </control>
+            </control>
+          </control>
+          <control component-type='com.webmethods.caf.faces.panel.StaticRow' renderer-type='com.webmethods.caf.faces.panel.StaticRow'>
+            <property name='height' value='60px' />
+            <property name='id' value='staticRow7' />
+            <control component-type='com.webmethods.caf.faces.panel.StaticCell' renderer-type='com.webmethods.caf.faces.panel.StaticCell'>
+              <property name='id' value='staticCell7' />
+              <control component-type='com.webmethods.caf.faces.output.FormattedText' renderer-type='com.webmethods.caf.faces.output.FormattedText'>
+                <property name='id' value='htmlOutputText16' />
+                <property name='value' value='#{me.mieAct}' />
+              </control>
+            </control>
+          </control>
+        </control>
+        <control component-type='com.webmethods.caf.faces.table.html.HtmlTableColumn' renderer-type='com.webmethods.caf.faces.render.table.IExtendedColumnRenderer'>
+          <property name='id' value='htmlTableColumn8' />
+          <property name='label' value='Jue' />
+          <property name='sort' value='#{me.jue}' />
+          <facet name='header'>
+            <control component-type='javax.faces.HtmlOutputText' renderer-type='com.webmethods.caf.faces.Text'>
+              <property name='id' value='htmlOutputText17' />
+              <property name='raw' value='true' />
+              <property name='value' value='Jue' />
+            </control>
+          </facet>
+          <control component-type='com.webmethods.caf.faces.panel.StaticRow' renderer-type='com.webmethods.caf.faces.panel.StaticRow'>
+            <property name='id' value='staticRow10' />
+            <control component-type='com.webmethods.caf.faces.panel.StaticCell' renderer-type='com.webmethods.caf.faces.panel.StaticCell'>
+              <property name='id' value='staticCell10' />
+              <control component-type='javax.faces.HtmlOutputText' renderer-type='com.webmethods.caf.faces.Text'>
+                <property name='id' value='htmlOutputText18' />
+                <property name='raw' value='true' />
+                <property name='value' value='#{me.jue}' />
+              </control>
+            </control>
+          </control>
+          <control component-type='com.webmethods.caf.faces.panel.StaticRow' renderer-type='com.webmethods.caf.faces.panel.StaticRow'>
+            <property name='height' value='60px' />
+            <property name='id' value='staticRow11' />
+            <control component-type='com.webmethods.caf.faces.panel.StaticCell' renderer-type='com.webmethods.caf.faces.panel.StaticCell'>
+              <property name='id' value='staticCell11' />
+              <control component-type='com.webmethods.caf.faces.output.FormattedText' renderer-type='com.webmethods.caf.faces.output.FormattedText'>
+                <property name='id' value='htmlOutputText20' />
+                <property name='value' value='#{me.jueAct}' />
+              </control>
+            </control>
+          </control>
+        </control>
+        <control component-type='com.webmethods.caf.faces.table.html.HtmlTableColumn' renderer-type='com.webmethods.caf.faces.render.table.IExtendedColumnRenderer'>
+          <property name='id' value='htmlTableColumn10' />
+          <property name='label' value='Vie' />
+          <property name='sort' value='#{me.vie}' />
+          <facet name='header'>
+            <control component-type='javax.faces.HtmlOutputText' renderer-type='com.webmethods.caf.faces.Text'>
+              <property name='id' value='htmlOutputText21' />
+              <property name='raw' value='true' />
+              <property name='value' value='Vie' />
+            </control>
+          </facet>
+          <control component-type='com.webmethods.caf.faces.panel.StaticRow' renderer-type='com.webmethods.caf.faces.panel.StaticRow'>
+            <property name='id' value='staticRow12' />
+            <control component-type='com.webmethods.caf.faces.panel.StaticCell' renderer-type='com.webmethods.caf.faces.panel.StaticCell'>
+              <property name='id' value='staticCell12' />
+              <control component-type='javax.faces.HtmlOutputText' renderer-type='com.webmethods.caf.faces.Text'>
+                <property name='id' value='htmlOutputText22' />
+                <property name='raw' value='true' />
+                <property name='value' value='#{me.vie}' />
+              </control>
+            </control>
+          </control>
+          <control component-type='com.webmethods.caf.faces.panel.StaticRow' renderer-type='com.webmethods.caf.faces.panel.StaticRow'>
+            <property name='height' value='60px' />
+            <property name='id' value='staticRow13' />
+            <control component-type='com.webmethods.caf.faces.panel.StaticCell' renderer-type='com.webmethods.caf.faces.panel.StaticCell'>
+              <property name='id' value='staticCell13' />
+              <control component-type='com.webmethods.caf.faces.output.FormattedText' renderer-type='com.webmethods.caf.faces.output.FormattedText'>
+                <property name='id' value='htmlOutputText24' />
+                <property name='value' value='#{me.vieAct}' />
+              </control>
+            </control>
+          </control>
+        </control>
+        <control component-type='com.webmethods.caf.faces.table.html.HtmlTableColumn' renderer-type='com.webmethods.caf.faces.render.table.IExtendedColumnRenderer'>
+          <property name='id' value='htmlTableColumn12' />
+          <property name='label' value='Sab' />
+          <property name='sort' value='#{me.sab}' />
+          <facet name='header'>
+            <control component-type='javax.faces.HtmlOutputText' renderer-type='com.webmethods.caf.faces.Text'>
+              <property name='id' value='htmlOutputText25' />
+              <property name='raw' value='true' />
+              <property name='value' value='Sab' />
+            </control>
+          </facet>
+          <control component-type='com.webmethods.caf.faces.panel.StaticRow' renderer-type='com.webmethods.caf.faces.panel.StaticRow'>
+            <property name='id' value='staticRow8' />
+            <control component-type='com.webmethods.caf.faces.panel.StaticCell' renderer-type='com.webmethods.caf.faces.panel.StaticCell'>
+              <property name='id' value='staticCell8' />
+              <control component-type='javax.faces.HtmlOutputText' renderer-type='com.webmethods.caf.faces.Text'>
+                <property name='id' value='htmlOutputText26' />
+                <property name='raw' value='true' />
+                <property name='value' value='#{me.sab}' />
+              </control>
+            </control>
+          </control>
+          <control component-type='com.webmethods.caf.faces.panel.StaticRow' renderer-type='com.webmethods.caf.faces.panel.StaticRow'>
+            <property name='height' value='60px' />
+            <property name='id' value='staticRow9' />
+            <control component-type='com.webmethods.caf.faces.panel.StaticCell' renderer-type='com.webmethods.caf.faces.panel.StaticCell'>
+              <property name='id' value='staticCell9' />
+              <control component-type='com.webmethods.caf.faces.output.FormattedText' renderer-type='com.webmethods.caf.faces.output.FormattedText'>
+                <property name='id' value='htmlOutputText28' />
+                <property name='value' value='#{me.sabAct}' />
+              </control>
+            </control>
+          </control>
+        </control>
+      </control>
+    </control>
+    <control component-type='com.webmethods.caf.faces.panel.StaticRow' renderer-type='com.webmethods.caf.faces.panel.StaticRow'>
+      <property name='id' value='staticRow' />
+      <control component-type='com.webmethods.caf.faces.panel.StaticCell' renderer-type='com.webmethods.caf.faces.panel.StaticCell'>
+        <property name='id' value='staticCell' />
+      </control>
+    </control>
+  </control>
+</view>

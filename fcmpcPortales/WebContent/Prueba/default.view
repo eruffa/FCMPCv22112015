@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<view>
+  <property name='pageManagedBean' value='PruebaDefaultviewView' />
+  <property name='preferencesBean' value='Prueba' />
+  <design-time-attribute name='portlet' value='prueba' />
+  <control component-type='com.webmethods.caf.faces.output.ErrorMessages' renderer-type='com.webmethods.caf.faces.output.ErrorMessages'>
+    <property name='id' value='messages' />
+  </control>
+  <control component-type='com.webmethods.caf.faces.command.CommandForm' renderer-type='com.webmethods.caf.faces.Form'>
+    <property name='defaultFocus' value='_first' />
+    <property name='id' value='defaultForm' />
+    <control component-type='com.webmethods.caf.faces.component.portlet.PortletInclude' renderer-type='com.webmethods.caf.faces.render.html.output.PortletIncludeRenderer'>
+      <property name='id' value='portletInclude' />
+      <property name='portlet' value='/meta/default/fcmpcportales___calendario/0000011190' />
+      <control component-type='javax.faces.Parameter' renderer-type=''>
+        <property name='name' value='mes' />
+        <property name='value' value='#{PruebaDefaultviewView.mes}' />
+      </control>
+      <control component-type='javax.faces.Parameter' renderer-type=''>
+        <property name='name' value='anyo' />
+        <property name='value' value='2015' />
+      </control>
+    </control>
+  </control>
+</view>
