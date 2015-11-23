@@ -11,7 +11,7 @@
     <property name='id' value='defaultForm' />
     <control component-type='com.webmethods.caf.faces.component.portlet.PortletInclude' renderer-type='com.webmethods.caf.faces.render.html.output.PortletIncludeRenderer'>
       <property name='id' value='portletInclude' />
-      <property name='portlet' value='/meta/default/fcmpcportales___calendario/0000011190' />
+      <property name='portlet' value='/meta/default/fcmpcportales___calendario/0000010173' />
       <control component-type='javax.faces.Parameter' renderer-type=''>
         <property name='name' value='mes' />
         <property name='value' value='#{PruebaDefaultviewView.mes}' />
