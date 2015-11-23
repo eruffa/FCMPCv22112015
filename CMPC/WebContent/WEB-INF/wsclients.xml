@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsclients>
+<webservice authenticationMethod="1" isConnectionURL="http://10.5.21.122:5555/ws/CMPC.proceso.servicios:uploadPlanilla_WSD?WSDL" isService="CMPC.proceso.servicios:uploadPlanilla_WSD" name="uploadPlanilla_WSD" package="caf.war.CMPC.wsclient.cmpc.proceso.servicios.uploadplanilla_wsd" password="{AES}Y5IgMqjfvkgbg7p5VUZztw==" requiresAuth="true" soapLibrary="wss" useNamespaceForPackage="false" username="Administrator" wsdlFile="src/caf/war/CMPC/wsclient/cmpc/proceso/servicios/uploadplanilla_wsd/uploadPlanilla_WSD.wsdl" wsdlURL="http://10.5.21.122:5555/ws/CMPC.proceso.servicios:uploadPlanilla_WSD?WSDL">
+<wsproxy className="caf.war.CMPC.wsclient.cmpc.proceso.servicios.uploadplanilla_wsd.CMPCProcesoServiciosUploadPlanilla_WSDStub">
+<wsclient managedBean="UploadPlanilla" operation="uploadPlanilla"/>
+</wsproxy>
+<generatedfile>caf\war\CMPC\wsclient\cmpc\proceso\servicios\uploadplanilla_wsd\CMPCProcesoServiciosUploadPlanilla_WSDStub.java</generatedfile>
+</webservice>
+</wsclients>

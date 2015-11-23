@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<view>
+  <property name='pageManagedBean' value='UploadDefaultviewView' />
+  <property name='preferencesBean' value='Upload' />
+  <design-time-attribute name='portlet' value='Upload' />
+  <control component-type='com.webmethods.caf.faces.output.ErrorMessages' renderer-type='com.webmethods.caf.faces.output.ErrorMessages'>
+    <property name='id' value='messages' />
+  </control>
+  <control component-type='com.webmethods.caf.faces.command.CommandForm' renderer-type='com.webmethods.caf.faces.Form'>
+    <property name='defaultFocus' value='_first' />
+    <property name='id' value='defaultForm' />
+    <control component-type='com.webmethods.caf.faces.panel.PropertyGroup' renderer-type='com.webmethods.caf.faces.panel.PropertyGroup'>
+      <property name='id' value='propertyGroup' />
+      <control component-type='com.webmethods.caf.faces.panel.PropertyLine' renderer-type='com.webmethods.caf.faces.panel.PropertyLine'>
+        <property name='id' value='propertyLine' />
+        <property name='label' value='Archivo' />
+        <control component-type='com.webmethods.caf.faces.input.File' renderer-type='com.webmethods.caf.faces.input.File'>
+          <property name='id' value='file' />
+          <property name='value' value='#{UploadDefaultviewView.fileItem}' />
+        </control>
+      </control>
+    </control>
+    <control component-type='com.webmethods.caf.faces.panel.PropertySubmit' renderer-type='com.webmethods.caf.faces.panel.PropertySubmit'>
+      <property name='id' value='propertySubmit' />
+      <facet name='submit'>
+        <control component-type='javax.faces.HtmlCommandButton' renderer-type='com.webmethods.caf.faces.Button'>
+          <property name='action' value='#{UploadDefaultviewView.actionUpload}' signature='java.lang.String action()' />
+          <property name='id' value='htmlCommandButton' />
+          <property name='value' value='Upload' />
+        </control>
+      </facet>
+    </control>
+  </control>
+</view>
