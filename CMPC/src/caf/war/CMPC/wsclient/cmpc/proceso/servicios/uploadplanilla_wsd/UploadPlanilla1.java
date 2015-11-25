@@ -2,19 +2,28 @@ package caf.war.CMPC.wsclient.cmpc.proceso.servicios.uploadplanilla_wsd;
 
 
 import java.io.Serializable;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
+import com.webmethods.caf.faces.annotations.ExpireWithPageFlow;
+import com.webmethods.caf.faces.annotations.DTManagedBean;
+import com.webmethods.caf.faces.annotations.BeanType;
 
 /**
  * Web Service Client bean generated for 
  * caf.war.CMPC.wsclient.cmpc.proceso.servicios.uploadplanilla_wsd.CMPCProcesoServiciosUploadPlanilla_WSDStub.uploadPlanilla.
  */
-public class UploadPlanilla extends com.webmethods.caf.faces.data.ws.wss.WSSContentProvider {
+@ManagedBean(name = "UploadPlanilla")
+@SessionScoped
+@ExpireWithPageFlow
+@DTManagedBean(beanType = BeanType.DEFAULT)
+public class UploadPlanilla1 extends com.webmethods.caf.faces.data.ws.wss.WSSContentProvider {
 
-	private static final long serialVersionUID = 8078913516475931648L;
+	private static final long serialVersionUID = 5936678849414047744L;
 	
 	/**
 	 * Constructor
 	 */
-	public UploadPlanilla() {
+	public UploadPlanilla1() {
 		super(caf.war.CMPC.wsclient.cmpc.proceso.servicios.uploadplanilla_wsd.CMPCProcesoServiciosUploadPlanilla_WSDStub.class,  // port type proxy class
 			"uploadPlanilla", // method to invoke
 			new String[] { "uploadPlanilla", } // method parameter names
@@ -37,7 +46,7 @@ public class UploadPlanilla extends com.webmethods.caf.faces.data.ws.wss.WSSCont
 	 */
 	public class Parameters implements Serializable {
 
-		private static final long serialVersionUID = 162722545940144128L;
+		private static final long serialVersionUID = 5949134148408375296L;
 		
 		public Parameters() {
 		}

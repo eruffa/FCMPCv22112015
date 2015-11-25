@@ -51,6 +51,7 @@ public class PruebaDefaultviewView  extends   com.webmethods.caf.faces.bean.Base
 	};
 	private java.lang.String mes;
 	private java.lang.String anyo;
+	private java.util.Date selectorPeriodo;
 	/**
 	 * Initialize page
 	 */
@@ -58,20 +59,20 @@ public class PruebaDefaultviewView  extends   com.webmethods.caf.faces.bean.Base
 		try {
 			Date inicio = new Date();
 			 Date fin = new Date();
-			 this.setMes("11");
+			 this.setMes("03");
 			 this.setAnyo("2015");
 			 SimpleDateFormat formateador = new SimpleDateFormat("dd/MM/yyyy");
-			 inicio = formateador.parse("01/11/2015");
-				fin = formateador.parse("10/11/2015");
+			 inicio = formateador.parse("01/03/2015");
+				fin = formateador.parse("10/03/2015");
 			//	this.getCalendar().setCalendarStartDate(inicio);
 			//	this.getCalendar().setCalendarEndDate(fin);
 		//		this.getCalendar().setInitialDate(inicio);
-			 inicio = formateador.parse("11/11/2015");
-				fin = formateador.parse("16/11/2015");
+			 inicio = formateador.parse("11/03/2015");
+				fin = formateador.parse("16/03/2015");
 			com.webmethods.caf.faces.data.calendar.CalendarEvent[] une= new com.webmethods.caf.faces.data.calendar.CalendarEvent[2]  ;
 			une[0] = com.webmethods.caf.faces.data.calendar.CalendarEvent.create(inicio, fin, true, "inicio", "Este es el dato", "valido");
-			 inicio = formateador.parse("23/11/2015");
-				fin = formateador.parse("26/11/2015");
+			 inicio = formateador.parse("23/03/2015");
+				fin = formateador.parse("26/03/2015");
 			une[1] = com.webmethods.caf.faces.data.calendar.CalendarEvent.create(inicio, fin, true, "homero", "Cualquier Dato", "valido");
 	//		this.getCalendar().setEvents(une);
 	//		this.getCalendar().setEventVar("une");
@@ -148,6 +149,25 @@ public class PruebaDefaultviewView  extends   com.webmethods.caf.faces.bean.Base
 
 	public void setAnyo(java.lang.String anyo)  {
 		this.anyo = anyo;
+	}
+
+	public String actionSeleccionaPeriodo() {
+	    Calendar calendar = Calendar.getInstance();
+	    calendar.setTime(getSelectorPeriodo());
+	    
+	    setMes(Integer.toString(calendar.get(Calendar.MONTH) + 1));
+	    setAnyo(Integer.toString(calendar.get(Calendar.YEAR)));
+	    
+		return null;
+	}
+
+	public java.util.Date getSelectorPeriodo()  {
+		
+		return selectorPeriodo;
+	}
+
+	public void setSelectorPeriodo(java.util.Date selectorPeriodo)  {
+		this.selectorPeriodo = selectorPeriodo;
 	}
 
 	/**

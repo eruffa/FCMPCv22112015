@@ -1,20 +1,20 @@
 
 /**
- * CMPCProcesoServiciosUploadPlanilla_WSDStub.java
+ * CMPCProcesoServiciosCrearImportacion_WSDStub.java
  *
  * This file was auto-generated from WSDL
  * by the Apache Axis2 version: 1.6.2.0001-0038  Built on : Apr 03, 2013 (02:58:38 CEST)
  */
-        package caf.war.CMPC.wsclient.cmpc.proceso.servicios.uploadplanilla_wsd;
+        package caf.war.CMPC.wsclient.cmpc.proceso.servicios.crearimportacion_wsd;
 
         
 
         /*
-        *  CMPCProcesoServiciosUploadPlanilla_WSDStub java implementation
+        *  CMPCProcesoServiciosCrearImportacion_WSDStub java implementation
         */
 
         
-        public class CMPCProcesoServiciosUploadPlanilla_WSDStub extends org.apache.axis2.client.Stub
+        public class CMPCProcesoServiciosCrearImportacion_WSDStub extends org.apache.axis2.client.Stub
         {
         protected org.apache.axis2.description.AxisOperation[] _operations;
 
@@ -38,7 +38,7 @@
     private void populateAxisService() throws org.apache.axis2.AxisFault {
 
      //creating the Service with a unique name
-     _service = new org.apache.axis2.description.AxisService("CMPCProcesoServiciosUploadPlanilla_WSD" + getUniqueSuffix());
+     _service = new org.apache.axis2.description.AxisService("CMPCProcesoServiciosCrearImportacion_WSD" + getUniqueSuffix());
      addAnonymousOperations();
 
         //creating the operations
@@ -49,7 +49,7 @@
                    __operation = new org.apache.axis2.description.OutInAxisOperation();
                 
 
-            __operation.setName(new javax.xml.namespace.QName("http://192.168.255.138/CMPC.proceso.servicios", "uploadPlanilla"));
+            __operation.setName(new javax.xml.namespace.QName("http://192.168.255.138/CMPC.proceso.servicios", "crearImportacion"));
 	    _service.addOperation(__operation);
 	    
 
@@ -71,7 +71,7 @@
       *Constructor that takes in a configContext
       */
 
-    public CMPCProcesoServiciosUploadPlanilla_WSDStub(org.apache.axis2.context.ConfigurationContext configurationContext,
+    public CMPCProcesoServiciosCrearImportacion_WSDStub(org.apache.axis2.context.ConfigurationContext configurationContext,
        java.lang.String targetEndpoint)
        throws org.apache.axis2.AxisFault {
          this(configurationContext,targetEndpoint,false);
@@ -81,7 +81,7 @@
    /**
      * Constructor that takes in a configContext  and useseperate listner
      */
-   public CMPCProcesoServiciosUploadPlanilla_WSDStub(org.apache.axis2.context.ConfigurationContext configurationContext,
+   public CMPCProcesoServiciosCrearImportacion_WSDStub(org.apache.axis2.context.ConfigurationContext configurationContext,
         java.lang.String targetEndpoint, boolean useSeparateListener)
         throws org.apache.axis2.AxisFault {
          //To populate AxisService
@@ -101,25 +101,25 @@
     /**
      * Default Constructor
      */
-    public CMPCProcesoServiciosUploadPlanilla_WSDStub(org.apache.axis2.context.ConfigurationContext configurationContext) throws org.apache.axis2.AxisFault {
+    public CMPCProcesoServiciosCrearImportacion_WSDStub(org.apache.axis2.context.ConfigurationContext configurationContext) throws org.apache.axis2.AxisFault {
         
-                    this(configurationContext,"http://192.168.255.138:5555/ws/CMPC.proceso.servicios.uploadPlanilla_WSD/CMPC_proceso_servicios_uploadPlanilla_WSD_Port" );
+                    this(configurationContext,"http://192.168.255.138:5555/ws/CMPC.proceso.servicios.crearImportacion_WSD/CMPC_proceso_servicios_crearImportacion_WSD_Port" );
                 
     }
 
     /**
      * Default Constructor
      */
-    public CMPCProcesoServiciosUploadPlanilla_WSDStub() throws org.apache.axis2.AxisFault {
+    public CMPCProcesoServiciosCrearImportacion_WSDStub() throws org.apache.axis2.AxisFault {
         
-                    this("http://192.168.255.138:5555/ws/CMPC.proceso.servicios.uploadPlanilla_WSD/CMPC_proceso_servicios_uploadPlanilla_WSD_Port" );
+                    this("http://192.168.255.138:5555/ws/CMPC.proceso.servicios.crearImportacion_WSD/CMPC_proceso_servicios_crearImportacion_WSD_Port" );
                 
     }
 
     /**
      * Constructor taking the target endpoint
      */
-    public CMPCProcesoServiciosUploadPlanilla_WSDStub(java.lang.String targetEndpoint) throws org.apache.axis2.AxisFault {
+    public CMPCProcesoServiciosCrearImportacion_WSDStub(java.lang.String targetEndpoint) throws org.apache.axis2.AxisFault {
         this(null,targetEndpoint);
     }
 
@@ -129,16 +129,16 @@
                     /**
                      * Auto generated method signature
                      * 
-                     * @see caf.war.CMPC.wsclient.cmpc.proceso.servicios.uploadplanilla_wsd.CMPCProcesoServiciosUploadPlanilla_WSD#uploadPlanilla
-                     * @param uploadPlanilla
+                     * @see caf.war.CMPC.wsclient.cmpc.proceso.servicios.crearimportacion_wsd.CMPCProcesoServiciosCrearImportacion_WSD#crearImportacion
+                     * @param crearImportacion
                     
                      */
 
                     
 
-                            public  caf.war.CMPC.wsclient.cmpc.proceso.servicios.uploadplanilla_wsd.CMPCProcesoServiciosUploadPlanilla_WSDStub.UploadPlanillaResponseE uploadPlanilla(
+                            public  caf.war.CMPC.wsclient.cmpc.proceso.servicios.crearimportacion_wsd.CMPCProcesoServiciosCrearImportacion_WSDStub.CrearImportacionResponseE crearImportacion(
 
-                            caf.war.CMPC.wsclient.cmpc.proceso.servicios.uploadplanilla_wsd.CMPCProcesoServiciosUploadPlanilla_WSDStub.UploadPlanillaE uploadPlanilla)
+                            caf.war.CMPC.wsclient.cmpc.proceso.servicios.crearimportacion_wsd.CMPCProcesoServiciosCrearImportacion_WSDStub.CrearImportacionE crearImportacion)
                         
 
                     throws java.rmi.RemoteException
@@ -147,7 +147,7 @@
               org.apache.axis2.context.MessageContext _messageContext = null;
               try{
                org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[0].getName());
-              _operationClient.getOptions().setAction("CMPC_proceso_servicios_uploadPlanilla_WSD_Binder_uploadPlanilla");
+              _operationClient.getOptions().setAction("CMPC_proceso_servicios_crearImportacion_WSD_Binder_crearImportacion");
               _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
               
@@ -165,10 +165,10 @@
                     
                                                     
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
-                                                    uploadPlanilla,
+                                                    crearImportacion,
                                                     optimizeContent(new javax.xml.namespace.QName("http://192.168.255.138/CMPC.proceso.servicios",
-                                                    "uploadPlanilla")), new javax.xml.namespace.QName("http://192.168.255.138/CMPC.proceso.servicios",
-                                                    "uploadPlanilla"));
+                                                    "crearImportacion")), new javax.xml.namespace.QName("http://192.168.255.138/CMPC.proceso.servicios",
+                                                    "crearImportacion"));
                                                 
         //adding SOAP soap_headers
          _serviceClient.addHeadersToEnvelope(env);
@@ -189,25 +189,25 @@
                 
                                 java.lang.Object object = fromOM(
                                              _returnEnv.getBody().getFirstElement() ,
-                                             caf.war.CMPC.wsclient.cmpc.proceso.servicios.uploadplanilla_wsd.CMPCProcesoServiciosUploadPlanilla_WSDStub.UploadPlanillaResponseE.class,
+                                             caf.war.CMPC.wsclient.cmpc.proceso.servicios.crearimportacion_wsd.CMPCProcesoServiciosCrearImportacion_WSDStub.CrearImportacionResponseE.class,
                                               getEnvelopeNamespaces(_returnEnv));
 
                                
-                                        return (caf.war.CMPC.wsclient.cmpc.proceso.servicios.uploadplanilla_wsd.CMPCProcesoServiciosUploadPlanilla_WSDStub.UploadPlanillaResponseE)object;
+                                        return (caf.war.CMPC.wsclient.cmpc.proceso.servicios.crearimportacion_wsd.CMPCProcesoServiciosCrearImportacion_WSDStub.CrearImportacionResponseE)object;
                                    
          }catch(org.apache.axis2.AxisFault f){
 
             org.apache.axiom.om.OMElement faultElt = f.getDetail();
             if (faultElt!=null){
-                if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"uploadPlanilla"))){
+                if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"crearImportacion"))){
                     //make the fault by reflection
                     try{
-                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"uploadPlanilla"));
+                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"crearImportacion"));
                         java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
                         java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(String.class);
                         java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
                         //message class
-                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"uploadPlanilla"));
+                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"crearImportacion"));
                         java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
                         java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
                         java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
@@ -279,490 +279,10 @@
         }
         return false;
     }
-     //http://192.168.255.138:5555/ws/CMPC.proceso.servicios.uploadPlanilla_WSD/CMPC_proceso_servicios_uploadPlanilla_WSD_Port
-        public static class UploadPlanillaResponse
+     //http://192.168.255.138:5555/ws/CMPC.proceso.servicios.crearImportacion_WSD/CMPC_proceso_servicios_crearImportacion_WSD_Port
+        public static class CrearImportacionResponse
         implements org.apache.axis2.databinding.ADBBean{
-        protected java.lang.String localResultadoLectura = "";
-                                
-
-                           /**
-                           * Auto generated getter method
-                           * @return java.lang.String
-                           */
-                           public  java.lang.String getResultadoLectura(){
-                               return localResultadoLectura;
-                           }
-
-                           
-                        
-                            /**
-                               * Auto generated setter method
-                               * @param param ResultadoLectura
-                               */
-                               public void setResultadoLectura(java.lang.String param){
-                            
-                                            this.localResultadoLectura=param;
-                                    
-
-                               }
-                            
-
-     
-     
-        /**
-        *
-        * @param parentQName
-        * @param factory
-        * @return org.apache.axiom.om.OMElement
-        */
-       public org.apache.axiom.om.OMElement getOMElement (
-               final javax.xml.namespace.QName parentQName,
-               final org.apache.axiom.om.OMFactory factory) throws org.apache.axis2.databinding.ADBException{
-
-
-        
-               org.apache.axiom.om.OMDataSource dataSource =
-                       new org.apache.axis2.databinding.ADBDataSource(this,parentQName);
-               return factory.createOMElement(dataSource,parentQName);
-            
-        }
-
-         public void serialize(final javax.xml.namespace.QName parentQName,
-                                       javax.xml.stream.XMLStreamWriter xmlWriter)
-                                throws javax.xml.stream.XMLStreamException, org.apache.axis2.databinding.ADBException{
-                           serialize(parentQName,xmlWriter,false);
-         }
-
-         public void serialize(final javax.xml.namespace.QName parentQName,
-                               javax.xml.stream.XMLStreamWriter xmlWriter,
-                               boolean serializeType)
-            throws javax.xml.stream.XMLStreamException, org.apache.axis2.databinding.ADBException{
-            
-                
-
-
-                java.lang.String prefix = null;
-                java.lang.String namespace = null;
-                
-
-                    prefix = parentQName.getPrefix();
-                    namespace = parentQName.getNamespaceURI();
-                    writeStartElement(prefix, namespace, parentQName.getLocalPart(), xmlWriter);
-                
-                  if (serializeType){
-               
-
-                   java.lang.String namespacePrefix = registerPrefix(xmlWriter,"http://192.168.255.138/CMPC.proceso.servicios");
-                   if ((namespacePrefix != null) && (namespacePrefix.trim().length() > 0)){
-                       writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","type",
-                           namespacePrefix+":uploadPlanillaResponse",
-                           xmlWriter);
-                   } else {
-                       writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","type",
-                           "uploadPlanillaResponse",
-                           xmlWriter);
-                   }
-
-               
-                   }
-               
-                                    namespace = "";
-                                    writeStartElement(null, namespace, "resultadoLectura", xmlWriter);
-                             
-
-                                          if (localResultadoLectura==null){
-                                              // write the nil attribute
-                                              
-                                                     writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
-                                                  
-                                          }else{
-
-                                        
-                                                   xmlWriter.writeCharacters(localResultadoLectura);
-                                            
-                                          }
-                                    
-                                   xmlWriter.writeEndElement();
-                             
-                    xmlWriter.writeEndElement();
-               
-
-        }
-
-        private static java.lang.String generatePrefix(java.lang.String namespace) {
-            if(namespace.equals("http://192.168.255.138/CMPC.proceso.servicios")){
-                return "ns1";
-            }
-            return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
-        }
-
-        /**
-         * Utility method to write an element start tag.
-         */
-        private void writeStartElement(java.lang.String prefix, java.lang.String namespace, java.lang.String localPart,
-                                       javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
-            java.lang.String writerPrefix = xmlWriter.getPrefix(namespace);
-            if (writerPrefix != null) {
-                xmlWriter.writeStartElement(namespace, localPart);
-            } else {
-                if (namespace.length() == 0) {
-                    prefix = "";
-                } else if (prefix == null) {
-                    prefix = generatePrefix(namespace);
-                }
-
-                xmlWriter.writeStartElement(prefix, localPart, namespace);
-                xmlWriter.writeNamespace(prefix, namespace);
-                xmlWriter.setPrefix(prefix, namespace);
-            }
-        }
-        
-        /**
-         * Util method to write an attribute with the ns prefix
-         */
-        private void writeAttribute(java.lang.String prefix,java.lang.String namespace,java.lang.String attName,
-                                    java.lang.String attValue,javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException{
-            if (xmlWriter.getPrefix(namespace) == null) {
-                xmlWriter.writeNamespace(prefix, namespace);
-                xmlWriter.setPrefix(prefix, namespace);
-            }
-            xmlWriter.writeAttribute(namespace,attName,attValue);
-        }
-
-        /**
-         * Util method to write an attribute without the ns prefix
-         */
-        private void writeAttribute(java.lang.String namespace,java.lang.String attName,
-                                    java.lang.String attValue,javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException{
-            if (namespace.equals("")) {
-                xmlWriter.writeAttribute(attName,attValue);
-            } else {
-                registerPrefix(xmlWriter, namespace);
-                xmlWriter.writeAttribute(namespace,attName,attValue);
-            }
-        }
-
-
-           /**
-             * Util method to write an attribute without the ns prefix
-             */
-            private void writeQNameAttribute(java.lang.String namespace, java.lang.String attName,
-                                             javax.xml.namespace.QName qname, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
-
-                java.lang.String attributeNamespace = qname.getNamespaceURI();
-                java.lang.String attributePrefix = xmlWriter.getPrefix(attributeNamespace);
-                if (attributePrefix == null) {
-                    attributePrefix = registerPrefix(xmlWriter, attributeNamespace);
-                }
-                java.lang.String attributeValue;
-                if (attributePrefix.trim().length() > 0) {
-                    attributeValue = attributePrefix + ":" + qname.getLocalPart();
-                } else {
-                    attributeValue = qname.getLocalPart();
-                }
-
-                if (namespace.equals("")) {
-                    xmlWriter.writeAttribute(attName, attributeValue);
-                } else {
-                    registerPrefix(xmlWriter, namespace);
-                    xmlWriter.writeAttribute(namespace, attName, attributeValue);
-                }
-            }
-        /**
-         *  method to handle Qnames
-         */
-
-        private void writeQName(javax.xml.namespace.QName qname,
-                                javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
-            java.lang.String namespaceURI = qname.getNamespaceURI();
-            if (namespaceURI != null) {
-                java.lang.String prefix = xmlWriter.getPrefix(namespaceURI);
-                if (prefix == null) {
-                    prefix = generatePrefix(namespaceURI);
-                    xmlWriter.writeNamespace(prefix, namespaceURI);
-                    xmlWriter.setPrefix(prefix,namespaceURI);
-                }
-
-                if (prefix.trim().length() > 0){
-                    xmlWriter.writeCharacters(prefix + ":" + org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
-                } else {
-                    // i.e this is the default namespace
-                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
-                }
-
-            } else {
-                xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
-            }
-        }
-
-        private void writeQNames(javax.xml.namespace.QName[] qnames,
-                                 javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
-
-            if (qnames != null) {
-                // we have to store this data until last moment since it is not possible to write any
-                // namespace data after writing the charactor data
-                java.lang.StringBuffer stringToWrite = new java.lang.StringBuffer();
-                java.lang.String namespaceURI = null;
-                java.lang.String prefix = null;
-
-                for (int i = 0; i < qnames.length; i++) {
-                    if (i > 0) {
-                        stringToWrite.append(" ");
-                    }
-                    namespaceURI = qnames[i].getNamespaceURI();
-                    if (namespaceURI != null) {
-                        prefix = xmlWriter.getPrefix(namespaceURI);
-                        if ((prefix == null) || (prefix.length() == 0)) {
-                            prefix = generatePrefix(namespaceURI);
-                            xmlWriter.writeNamespace(prefix, namespaceURI);
-                            xmlWriter.setPrefix(prefix,namespaceURI);
-                        }
-
-                        if (prefix.trim().length() > 0){
-                            stringToWrite.append(prefix).append(":").append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
-                        } else {
-                            stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
-                        }
-                    } else {
-                        stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
-                    }
-                }
-                xmlWriter.writeCharacters(stringToWrite.toString());
-            }
-
-        }
-
-
-        /**
-         * Register a namespace prefix
-         */
-        private java.lang.String registerPrefix(javax.xml.stream.XMLStreamWriter xmlWriter, java.lang.String namespace) throws javax.xml.stream.XMLStreamException {
-            java.lang.String prefix = xmlWriter.getPrefix(namespace);
-            if (prefix == null) {
-                prefix = generatePrefix(namespace);
-                javax.xml.namespace.NamespaceContext nsContext = xmlWriter.getNamespaceContext();
-                while (true) {
-                    java.lang.String uri = nsContext.getNamespaceURI(prefix);
-                    if (uri == null || uri.length() == 0) {
-                        break;
-                    }
-                    prefix = org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
-                }
-                xmlWriter.writeNamespace(prefix, namespace);
-                xmlWriter.setPrefix(prefix, namespace);
-            }
-            return prefix;
-        }
-
-
-  
-        /**
-        * databinding method to get an XML representation of this object
-        *
-        */
-        public javax.xml.stream.XMLStreamReader getPullParser(javax.xml.namespace.QName qName)
-                    throws org.apache.axis2.databinding.ADBException{
-
-
-        
-                 java.util.ArrayList elementList = new java.util.ArrayList();
-                 java.util.ArrayList attribList = new java.util.ArrayList();
-
-                
-                                      elementList.add(new javax.xml.namespace.QName("",
-                                                                      "resultadoLectura"));
-                                 
-                                         elementList.add(localResultadoLectura==null?null:
-                                         org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localResultadoLectura));
-                                    
-
-                return new org.apache.axis2.databinding.utils.reader.ADBXMLStreamReaderImpl(qName, elementList.toArray(), attribList.toArray());
-            
-            
-
-        }
-
-  
-
-     /**
-      *  Factory class that keeps the parse method
-      */
-    public static class Factory{
-
-        
-        
-
-        /**
-        * static method to create the object
-        * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
-        *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
-        * Postcondition: If this object is an element, the reader is positioned at its end element
-        *                If this object is a complex type, the reader is positioned at the end element of its outer element
-        */
-        public static UploadPlanillaResponse parse(javax.xml.stream.XMLStreamReader reader) throws java.lang.Exception{
-            UploadPlanillaResponse object =
-                new UploadPlanillaResponse();
-
-            int event;
-            java.lang.String nillableValue = null;
-            java.lang.String prefix ="";
-            java.lang.String namespaceuri ="";
-            try {
-                
-                while (!reader.isStartElement() && !reader.isEndElement())
-                    reader.next();
-
-                
-                if (reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","type")!=null){
-                  java.lang.String fullTypeName = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance",
-                        "type");
-                  if (fullTypeName!=null){
-                    java.lang.String nsPrefix = null;
-                    if (fullTypeName.indexOf(":") > -1){
-                        nsPrefix = fullTypeName.substring(0,fullTypeName.indexOf(":"));
-                    }
-                    nsPrefix = nsPrefix==null?"":nsPrefix;
-
-                    java.lang.String type = fullTypeName.substring(fullTypeName.indexOf(":")+1);
-                    
-                            if (!"uploadPlanillaResponse".equals(type)){
-                                //find namespace for the prefix
-                                java.lang.String nsUri = reader.getNamespaceContext().getNamespaceURI(nsPrefix);
-                                return (UploadPlanillaResponse)ExtensionMapper.getTypeObject(
-                                     nsUri,type,reader);
-                              }
-                        
-
-                  }
-                
-
-                }
-
-                
-
-                
-                // Note all attributes that were handled. Used to differ normal attributes
-                // from anyAttributes.
-                java.util.Vector handledAttributes = new java.util.Vector();
-                
-
-                
-                    
-                    reader.next();
-                
-                                    
-                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
-                                
-                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","resultadoLectura").equals(reader.getName())){
-                                
-                                       nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
-                                       if (!"true".equals(nillableValue) && !"1".equals(nillableValue)){
-                                    
-
-                                    java.lang.String content = reader.getElementText();
-                                    
-                                              object.setResultadoLectura(
-                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
-                                            
-                                       } else {
-                                           
-                                           
-                                           reader.getElementText(); // throw away text nodes if any.
-                                       }
-                                      
-                                        reader.next();
-                                    
-                              }  // End of if for expected property start element
-                                
-                                else{
-                                    // A start element we are not expecting indicates an invalid parameter was passed
-                                    throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getName());
-                                }
-                              
-                            while (!reader.isStartElement() && !reader.isEndElement())
-                                reader.next();
-                            
-                                if (reader.isStartElement())
-                                // A start element we are not expecting indicates a trailing invalid property
-                                throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getName());
-                            
-
-
-
-            } catch (javax.xml.stream.XMLStreamException e) {
-                throw new java.lang.Exception(e);
-            }
-
-            return object;
-        }
-
-        }//end of factory class
-
-        
-
-        }
-           
-    
-        public static class ExtensionMapper{
-
-          public static java.lang.Object getTypeObject(java.lang.String namespaceURI,
-                                                       java.lang.String typeName,
-                                                       javax.xml.stream.XMLStreamReader reader) throws java.lang.Exception{
-
-              
-                  if (
-                  "http://192.168.255.138/CMPC.proceso.servicios".equals(namespaceURI) &&
-                  "uploadPlanilla".equals(typeName)){
-                   
-                            return  UploadPlanilla.Factory.parse(reader);
-                        
-
-                  }
-
-              
-                  if (
-                  "http://192.168.255.138/CMPC.proceso.servicios".equals(namespaceURI) &&
-                  "uploadPlanillaResponse".equals(typeName)){
-                   
-                            return  UploadPlanillaResponse.Factory.parse(reader);
-                        
-
-                  }
-
-              
-             throw new org.apache.axis2.databinding.ADBException("Unsupported type " + namespaceURI + " " + typeName);
-          }
-
-        }
-    
-        public static class UploadPlanilla
-        implements org.apache.axis2.databinding.ADBBean{
-        protected java.lang.String localNombreArchivo = "";
-                                
-
-                           /**
-                           * Auto generated getter method
-                           * @return java.lang.String
-                           */
-                           public  java.lang.String getNombreArchivo(){
-                               return localNombreArchivo;
-                           }
-
-                           
-                        
-                            /**
-                               * Auto generated setter method
-                               * @param param NombreArchivo
-                               */
-                               public void setNombreArchivo(java.lang.String param){
-                            
-                                            this.localNombreArchivo=param;
-                                    
-
-                               }
-                            
-
-                        protected java.lang.String localIdImportacion = "";
+        protected java.lang.String localIdImportacion = "";
                                 
 
                            /**
@@ -835,35 +355,17 @@
                    java.lang.String namespacePrefix = registerPrefix(xmlWriter,"http://192.168.255.138/CMPC.proceso.servicios");
                    if ((namespacePrefix != null) && (namespacePrefix.trim().length() > 0)){
                        writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","type",
-                           namespacePrefix+":uploadPlanilla",
+                           namespacePrefix+":crearImportacionResponse",
                            xmlWriter);
                    } else {
                        writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","type",
-                           "uploadPlanilla",
+                           "crearImportacionResponse",
                            xmlWriter);
                    }
 
                
                    }
                
-                                    namespace = "";
-                                    writeStartElement(null, namespace, "nombreArchivo", xmlWriter);
-                             
-
-                                          if (localNombreArchivo==null){
-                                              // write the nil attribute
-                                              
-                                                     writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
-                                                  
-                                          }else{
-
-                                        
-                                                   xmlWriter.writeCharacters(localNombreArchivo);
-                                            
-                                          }
-                                    
-                                   xmlWriter.writeEndElement();
-                             
                                     namespace = "";
                                     writeStartElement(null, namespace, "idImportacion", xmlWriter);
                              
@@ -1068,12 +570,6 @@
 
                 
                                       elementList.add(new javax.xml.namespace.QName("",
-                                                                      "nombreArchivo"));
-                                 
-                                         elementList.add(localNombreArchivo==null?null:
-                                         org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localNombreArchivo));
-                                    
-                                      elementList.add(new javax.xml.namespace.QName("",
                                                                       "idImportacion"));
                                  
                                          elementList.add(localIdImportacion==null?null:
@@ -1103,9 +599,9 @@
         * Postcondition: If this object is an element, the reader is positioned at its end element
         *                If this object is a complex type, the reader is positioned at the end element of its outer element
         */
-        public static UploadPlanilla parse(javax.xml.stream.XMLStreamReader reader) throws java.lang.Exception{
-            UploadPlanilla object =
-                new UploadPlanilla();
+        public static CrearImportacionResponse parse(javax.xml.stream.XMLStreamReader reader) throws java.lang.Exception{
+            CrearImportacionResponse object =
+                new CrearImportacionResponse();
 
             int event;
             java.lang.String nillableValue = null;
@@ -1129,10 +625,10 @@
 
                     java.lang.String type = fullTypeName.substring(fullTypeName.indexOf(":")+1);
                     
-                            if (!"uploadPlanilla".equals(type)){
+                            if (!"crearImportacionResponse".equals(type)){
                                 //find namespace for the prefix
                                 java.lang.String nsUri = reader.getNamespaceContext().getNamespaceURI(nsPrefix);
-                                return (UploadPlanilla)ExtensionMapper.getTypeObject(
+                                return (CrearImportacionResponse)ExtensionMapper.getTypeObject(
                                      nsUri,type,reader);
                               }
                         
@@ -1154,35 +650,6 @@
                     
                     reader.next();
                 
-                                    
-                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
-                                
-                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","nombreArchivo").equals(reader.getName())){
-                                
-                                       nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
-                                       if (!"true".equals(nillableValue) && !"1".equals(nillableValue)){
-                                    
-
-                                    java.lang.String content = reader.getElementText();
-                                    
-                                              object.setNombreArchivo(
-                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
-                                            
-                                       } else {
-                                           
-                                           
-                                           reader.getElementText(); // throw away text nodes if any.
-                                       }
-                                      
-                                        reader.next();
-                                    
-                              }  // End of if for expected property start element
-                                
-                                else{
-                                    // A start element we are not expecting indicates an invalid parameter was passed
-                                    throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getName());
-                                }
-                            
                                     
                                     while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
                                 
@@ -1236,36 +703,36 @@
         }
            
     
-        public static class UploadPlanillaE
+        public static class CrearImportacionE
         implements org.apache.axis2.databinding.ADBBean{
         
                 public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName(
                 "http://192.168.255.138/CMPC.proceso.servicios",
-                "uploadPlanilla",
+                "crearImportacion",
                 "ns1");
 
             
 
-                        protected caf.war.CMPC.wsclient.cmpc.proceso.servicios.uploadplanilla_wsd.CMPCProcesoServiciosUploadPlanilla_WSDStub.UploadPlanilla localUploadPlanilla = new caf.war.CMPC.wsclient.cmpc.proceso.servicios.uploadplanilla_wsd.CMPCProcesoServiciosUploadPlanilla_WSDStub.UploadPlanilla();
+                        protected caf.war.CMPC.wsclient.cmpc.proceso.servicios.crearimportacion_wsd.CMPCProcesoServiciosCrearImportacion_WSDStub.CrearImportacion localCrearImportacion = new caf.war.CMPC.wsclient.cmpc.proceso.servicios.crearimportacion_wsd.CMPCProcesoServiciosCrearImportacion_WSDStub.CrearImportacion();
                                 
 
                            /**
                            * Auto generated getter method
-                           * @return UploadPlanilla
+                           * @return CrearImportacion
                            */
-                           public  UploadPlanilla getUploadPlanilla(){
-                               return localUploadPlanilla;
+                           public  CrearImportacion getCrearImportacion(){
+                               return localCrearImportacion;
                            }
 
                            
                         
                             /**
                                * Auto generated setter method
-                               * @param param UploadPlanilla
+                               * @param param CrearImportacion
                                */
-                               public void setUploadPlanilla(UploadPlanilla param){
+                               public void setCrearImportacion(CrearImportacion param){
                             
-                                            this.localUploadPlanilla=param;
+                                            this.localCrearImportacion=param;
                                     
 
                                }
@@ -1305,10 +772,10 @@
                 
                 //We can safely assume an element has only one type associated with it
                 
-                                 if (localUploadPlanilla==null){
-                                   throw new org.apache.axis2.databinding.ADBException("uploadPlanilla cannot be null!");
+                                 if (localCrearImportacion==null){
+                                   throw new org.apache.axis2.databinding.ADBException("crearImportacion cannot be null!");
                                  }
-                                 localUploadPlanilla.serialize(MY_QNAME,xmlWriter);
+                                 localCrearImportacion.serialize(MY_QNAME,xmlWriter);
                             
 
         }
@@ -1491,7 +958,7 @@
         
                 
                 //We can safely assume an element has only one type associated with it
-                return localUploadPlanilla.getPullParser(MY_QNAME);
+                return localCrearImportacion.getPullParser(MY_QNAME);
 
         }
 
@@ -1512,9 +979,9 @@
         * Postcondition: If this object is an element, the reader is positioned at its end element
         *                If this object is a complex type, the reader is positioned at the end element of its outer element
         */
-        public static UploadPlanillaE parse(javax.xml.stream.XMLStreamReader reader) throws java.lang.Exception{
-            UploadPlanillaE object =
-                new UploadPlanillaE();
+        public static CrearImportacionE parse(javax.xml.stream.XMLStreamReader reader) throws java.lang.Exception{
+            CrearImportacionE object =
+                new CrearImportacionE();
 
             int event;
             java.lang.String nillableValue = null;
@@ -1537,9 +1004,9 @@
                 while(!reader.isEndElement()) {
                     if (reader.isStartElement() ){
                 
-                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://192.168.255.138/CMPC.proceso.servicios","uploadPlanilla").equals(reader.getName())){
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://192.168.255.138/CMPC.proceso.servicios","crearImportacion").equals(reader.getName())){
                                 
-                                                object.setUploadPlanilla(UploadPlanilla.Factory.parse(reader));
+                                                object.setCrearImportacion(CrearImportacion.Factory.parse(reader));
                                             
                               }  // End of if for expected property start element
                                 
@@ -1570,36 +1037,36 @@
         }
            
     
-        public static class UploadPlanillaResponseE
+        public static class CrearImportacionResponseE
         implements org.apache.axis2.databinding.ADBBean{
         
                 public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName(
                 "http://192.168.255.138/CMPC.proceso.servicios",
-                "uploadPlanillaResponse",
+                "crearImportacionResponse",
                 "ns1");
 
             
 
-                        protected caf.war.CMPC.wsclient.cmpc.proceso.servicios.uploadplanilla_wsd.CMPCProcesoServiciosUploadPlanilla_WSDStub.UploadPlanillaResponse localUploadPlanillaResponse = new caf.war.CMPC.wsclient.cmpc.proceso.servicios.uploadplanilla_wsd.CMPCProcesoServiciosUploadPlanilla_WSDStub.UploadPlanillaResponse();
+                        protected caf.war.CMPC.wsclient.cmpc.proceso.servicios.crearimportacion_wsd.CMPCProcesoServiciosCrearImportacion_WSDStub.CrearImportacionResponse localCrearImportacionResponse = new caf.war.CMPC.wsclient.cmpc.proceso.servicios.crearimportacion_wsd.CMPCProcesoServiciosCrearImportacion_WSDStub.CrearImportacionResponse();
                                 
 
                            /**
                            * Auto generated getter method
-                           * @return UploadPlanillaResponse
+                           * @return CrearImportacionResponse
                            */
-                           public  UploadPlanillaResponse getUploadPlanillaResponse(){
-                               return localUploadPlanillaResponse;
+                           public  CrearImportacionResponse getCrearImportacionResponse(){
+                               return localCrearImportacionResponse;
                            }
 
                            
                         
                             /**
                                * Auto generated setter method
-                               * @param param UploadPlanillaResponse
+                               * @param param CrearImportacionResponse
                                */
-                               public void setUploadPlanillaResponse(UploadPlanillaResponse param){
+                               public void setCrearImportacionResponse(CrearImportacionResponse param){
                             
-                                            this.localUploadPlanillaResponse=param;
+                                            this.localCrearImportacionResponse=param;
                                     
 
                                }
@@ -1639,10 +1106,10 @@
                 
                 //We can safely assume an element has only one type associated with it
                 
-                                 if (localUploadPlanillaResponse==null){
-                                   throw new org.apache.axis2.databinding.ADBException("uploadPlanillaResponse cannot be null!");
+                                 if (localCrearImportacionResponse==null){
+                                   throw new org.apache.axis2.databinding.ADBException("crearImportacionResponse cannot be null!");
                                  }
-                                 localUploadPlanillaResponse.serialize(MY_QNAME,xmlWriter);
+                                 localCrearImportacionResponse.serialize(MY_QNAME,xmlWriter);
                             
 
         }
@@ -1825,7 +1292,7 @@
         
                 
                 //We can safely assume an element has only one type associated with it
-                return localUploadPlanillaResponse.getPullParser(MY_QNAME);
+                return localCrearImportacionResponse.getPullParser(MY_QNAME);
 
         }
 
@@ -1846,9 +1313,9 @@
         * Postcondition: If this object is an element, the reader is positioned at its end element
         *                If this object is a complex type, the reader is positioned at the end element of its outer element
         */
-        public static UploadPlanillaResponseE parse(javax.xml.stream.XMLStreamReader reader) throws java.lang.Exception{
-            UploadPlanillaResponseE object =
-                new UploadPlanillaResponseE();
+        public static CrearImportacionResponseE parse(javax.xml.stream.XMLStreamReader reader) throws java.lang.Exception{
+            CrearImportacionResponseE object =
+                new CrearImportacionResponseE();
 
             int event;
             java.lang.String nillableValue = null;
@@ -1871,9 +1338,9 @@
                 while(!reader.isEndElement()) {
                     if (reader.isStartElement() ){
                 
-                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://192.168.255.138/CMPC.proceso.servicios","uploadPlanillaResponse").equals(reader.getName())){
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://192.168.255.138/CMPC.proceso.servicios","crearImportacionResponse").equals(reader.getName())){
                                 
-                                                object.setUploadPlanillaResponse(UploadPlanillaResponse.Factory.parse(reader));
+                                                object.setCrearImportacionResponse(CrearImportacionResponse.Factory.parse(reader));
                                             
                               }  // End of if for expected property start element
                                 
@@ -1904,12 +1371,467 @@
         }
            
     
-            private  org.apache.axiom.om.OMElement  toOM(caf.war.CMPC.wsclient.cmpc.proceso.servicios.uploadplanilla_wsd.CMPCProcesoServiciosUploadPlanilla_WSDStub.UploadPlanillaE param, boolean optimizeContent)
+        public static class ExtensionMapper{
+
+          public static java.lang.Object getTypeObject(java.lang.String namespaceURI,
+                                                       java.lang.String typeName,
+                                                       javax.xml.stream.XMLStreamReader reader) throws java.lang.Exception{
+
+              
+                  if (
+                  "http://192.168.255.138/CMPC.proceso.servicios".equals(namespaceURI) &&
+                  "crearImportacion".equals(typeName)){
+                   
+                            return  CrearImportacion.Factory.parse(reader);
+                        
+
+                  }
+
+              
+                  if (
+                  "http://192.168.255.138/CMPC.proceso.servicios".equals(namespaceURI) &&
+                  "crearImportacionResponse".equals(typeName)){
+                   
+                            return  CrearImportacionResponse.Factory.parse(reader);
+                        
+
+                  }
+
+              
+             throw new org.apache.axis2.databinding.ADBException("Unsupported type " + namespaceURI + " " + typeName);
+          }
+
+        }
+    
+        public static class CrearImportacion
+        implements org.apache.axis2.databinding.ADBBean{
+        protected java.lang.String localIdProyecto = "";
+                                
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getIdProyecto(){
+                               return localIdProyecto;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param IdProyecto
+                               */
+                               public void setIdProyecto(java.lang.String param){
+                            
+                                            this.localIdProyecto=param;
+                                    
+
+                               }
+                            
+
+     
+     
+        /**
+        *
+        * @param parentQName
+        * @param factory
+        * @return org.apache.axiom.om.OMElement
+        */
+       public org.apache.axiom.om.OMElement getOMElement (
+               final javax.xml.namespace.QName parentQName,
+               final org.apache.axiom.om.OMFactory factory) throws org.apache.axis2.databinding.ADBException{
+
+
+        
+               org.apache.axiom.om.OMDataSource dataSource =
+                       new org.apache.axis2.databinding.ADBDataSource(this,parentQName);
+               return factory.createOMElement(dataSource,parentQName);
+            
+        }
+
+         public void serialize(final javax.xml.namespace.QName parentQName,
+                                       javax.xml.stream.XMLStreamWriter xmlWriter)
+                                throws javax.xml.stream.XMLStreamException, org.apache.axis2.databinding.ADBException{
+                           serialize(parentQName,xmlWriter,false);
+         }
+
+         public void serialize(final javax.xml.namespace.QName parentQName,
+                               javax.xml.stream.XMLStreamWriter xmlWriter,
+                               boolean serializeType)
+            throws javax.xml.stream.XMLStreamException, org.apache.axis2.databinding.ADBException{
+            
+                
+
+
+                java.lang.String prefix = null;
+                java.lang.String namespace = null;
+                
+
+                    prefix = parentQName.getPrefix();
+                    namespace = parentQName.getNamespaceURI();
+                    writeStartElement(prefix, namespace, parentQName.getLocalPart(), xmlWriter);
+                
+                  if (serializeType){
+               
+
+                   java.lang.String namespacePrefix = registerPrefix(xmlWriter,"http://192.168.255.138/CMPC.proceso.servicios");
+                   if ((namespacePrefix != null) && (namespacePrefix.trim().length() > 0)){
+                       writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","type",
+                           namespacePrefix+":crearImportacion",
+                           xmlWriter);
+                   } else {
+                       writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","type",
+                           "crearImportacion",
+                           xmlWriter);
+                   }
+
+               
+                   }
+               
+                                    namespace = "";
+                                    writeStartElement(null, namespace, "idProyecto", xmlWriter);
+                             
+
+                                          if (localIdProyecto==null){
+                                              // write the nil attribute
+                                              
+                                                     writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localIdProyecto);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             
+                    xmlWriter.writeEndElement();
+               
+
+        }
+
+        private static java.lang.String generatePrefix(java.lang.String namespace) {
+            if(namespace.equals("http://192.168.255.138/CMPC.proceso.servicios")){
+                return "ns1";
+            }
+            return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
+        }
+
+        /**
+         * Utility method to write an element start tag.
+         */
+        private void writeStartElement(java.lang.String prefix, java.lang.String namespace, java.lang.String localPart,
+                                       javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
+            java.lang.String writerPrefix = xmlWriter.getPrefix(namespace);
+            if (writerPrefix != null) {
+                xmlWriter.writeStartElement(namespace, localPart);
+            } else {
+                if (namespace.length() == 0) {
+                    prefix = "";
+                } else if (prefix == null) {
+                    prefix = generatePrefix(namespace);
+                }
+
+                xmlWriter.writeStartElement(prefix, localPart, namespace);
+                xmlWriter.writeNamespace(prefix, namespace);
+                xmlWriter.setPrefix(prefix, namespace);
+            }
+        }
+        
+        /**
+         * Util method to write an attribute with the ns prefix
+         */
+        private void writeAttribute(java.lang.String prefix,java.lang.String namespace,java.lang.String attName,
+                                    java.lang.String attValue,javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException{
+            if (xmlWriter.getPrefix(namespace) == null) {
+                xmlWriter.writeNamespace(prefix, namespace);
+                xmlWriter.setPrefix(prefix, namespace);
+            }
+            xmlWriter.writeAttribute(namespace,attName,attValue);
+        }
+
+        /**
+         * Util method to write an attribute without the ns prefix
+         */
+        private void writeAttribute(java.lang.String namespace,java.lang.String attName,
+                                    java.lang.String attValue,javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException{
+            if (namespace.equals("")) {
+                xmlWriter.writeAttribute(attName,attValue);
+            } else {
+                registerPrefix(xmlWriter, namespace);
+                xmlWriter.writeAttribute(namespace,attName,attValue);
+            }
+        }
+
+
+           /**
+             * Util method to write an attribute without the ns prefix
+             */
+            private void writeQNameAttribute(java.lang.String namespace, java.lang.String attName,
+                                             javax.xml.namespace.QName qname, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
+
+                java.lang.String attributeNamespace = qname.getNamespaceURI();
+                java.lang.String attributePrefix = xmlWriter.getPrefix(attributeNamespace);
+                if (attributePrefix == null) {
+                    attributePrefix = registerPrefix(xmlWriter, attributeNamespace);
+                }
+                java.lang.String attributeValue;
+                if (attributePrefix.trim().length() > 0) {
+                    attributeValue = attributePrefix + ":" + qname.getLocalPart();
+                } else {
+                    attributeValue = qname.getLocalPart();
+                }
+
+                if (namespace.equals("")) {
+                    xmlWriter.writeAttribute(attName, attributeValue);
+                } else {
+                    registerPrefix(xmlWriter, namespace);
+                    xmlWriter.writeAttribute(namespace, attName, attributeValue);
+                }
+            }
+        /**
+         *  method to handle Qnames
+         */
+
+        private void writeQName(javax.xml.namespace.QName qname,
+                                javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
+            java.lang.String namespaceURI = qname.getNamespaceURI();
+            if (namespaceURI != null) {
+                java.lang.String prefix = xmlWriter.getPrefix(namespaceURI);
+                if (prefix == null) {
+                    prefix = generatePrefix(namespaceURI);
+                    xmlWriter.writeNamespace(prefix, namespaceURI);
+                    xmlWriter.setPrefix(prefix,namespaceURI);
+                }
+
+                if (prefix.trim().length() > 0){
+                    xmlWriter.writeCharacters(prefix + ":" + org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
+                } else {
+                    // i.e this is the default namespace
+                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
+                }
+
+            } else {
+                xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
+            }
+        }
+
+        private void writeQNames(javax.xml.namespace.QName[] qnames,
+                                 javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
+
+            if (qnames != null) {
+                // we have to store this data until last moment since it is not possible to write any
+                // namespace data after writing the charactor data
+                java.lang.StringBuffer stringToWrite = new java.lang.StringBuffer();
+                java.lang.String namespaceURI = null;
+                java.lang.String prefix = null;
+
+                for (int i = 0; i < qnames.length; i++) {
+                    if (i > 0) {
+                        stringToWrite.append(" ");
+                    }
+                    namespaceURI = qnames[i].getNamespaceURI();
+                    if (namespaceURI != null) {
+                        prefix = xmlWriter.getPrefix(namespaceURI);
+                        if ((prefix == null) || (prefix.length() == 0)) {
+                            prefix = generatePrefix(namespaceURI);
+                            xmlWriter.writeNamespace(prefix, namespaceURI);
+                            xmlWriter.setPrefix(prefix,namespaceURI);
+                        }
+
+                        if (prefix.trim().length() > 0){
+                            stringToWrite.append(prefix).append(":").append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
+                        } else {
+                            stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
+                        }
+                    } else {
+                        stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
+                    }
+                }
+                xmlWriter.writeCharacters(stringToWrite.toString());
+            }
+
+        }
+
+
+        /**
+         * Register a namespace prefix
+         */
+        private java.lang.String registerPrefix(javax.xml.stream.XMLStreamWriter xmlWriter, java.lang.String namespace) throws javax.xml.stream.XMLStreamException {
+            java.lang.String prefix = xmlWriter.getPrefix(namespace);
+            if (prefix == null) {
+                prefix = generatePrefix(namespace);
+                javax.xml.namespace.NamespaceContext nsContext = xmlWriter.getNamespaceContext();
+                while (true) {
+                    java.lang.String uri = nsContext.getNamespaceURI(prefix);
+                    if (uri == null || uri.length() == 0) {
+                        break;
+                    }
+                    prefix = org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
+                }
+                xmlWriter.writeNamespace(prefix, namespace);
+                xmlWriter.setPrefix(prefix, namespace);
+            }
+            return prefix;
+        }
+
+
+  
+        /**
+        * databinding method to get an XML representation of this object
+        *
+        */
+        public javax.xml.stream.XMLStreamReader getPullParser(javax.xml.namespace.QName qName)
+                    throws org.apache.axis2.databinding.ADBException{
+
+
+        
+                 java.util.ArrayList elementList = new java.util.ArrayList();
+                 java.util.ArrayList attribList = new java.util.ArrayList();
+
+                
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "idProyecto"));
+                                 
+                                         elementList.add(localIdProyecto==null?null:
+                                         org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localIdProyecto));
+                                    
+
+                return new org.apache.axis2.databinding.utils.reader.ADBXMLStreamReaderImpl(qName, elementList.toArray(), attribList.toArray());
+            
+            
+
+        }
+
+  
+
+     /**
+      *  Factory class that keeps the parse method
+      */
+    public static class Factory{
+
+        
+        
+
+        /**
+        * static method to create the object
+        * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
+        *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
+        * Postcondition: If this object is an element, the reader is positioned at its end element
+        *                If this object is a complex type, the reader is positioned at the end element of its outer element
+        */
+        public static CrearImportacion parse(javax.xml.stream.XMLStreamReader reader) throws java.lang.Exception{
+            CrearImportacion object =
+                new CrearImportacion();
+
+            int event;
+            java.lang.String nillableValue = null;
+            java.lang.String prefix ="";
+            java.lang.String namespaceuri ="";
+            try {
+                
+                while (!reader.isStartElement() && !reader.isEndElement())
+                    reader.next();
+
+                
+                if (reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","type")!=null){
+                  java.lang.String fullTypeName = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance",
+                        "type");
+                  if (fullTypeName!=null){
+                    java.lang.String nsPrefix = null;
+                    if (fullTypeName.indexOf(":") > -1){
+                        nsPrefix = fullTypeName.substring(0,fullTypeName.indexOf(":"));
+                    }
+                    nsPrefix = nsPrefix==null?"":nsPrefix;
+
+                    java.lang.String type = fullTypeName.substring(fullTypeName.indexOf(":")+1);
+                    
+                            if (!"crearImportacion".equals(type)){
+                                //find namespace for the prefix
+                                java.lang.String nsUri = reader.getNamespaceContext().getNamespaceURI(nsPrefix);
+                                return (CrearImportacion)ExtensionMapper.getTypeObject(
+                                     nsUri,type,reader);
+                              }
+                        
+
+                  }
+                
+
+                }
+
+                
+
+                
+                // Note all attributes that were handled. Used to differ normal attributes
+                // from anyAttributes.
+                java.util.Vector handledAttributes = new java.util.Vector();
+                
+
+                
+                    
+                    reader.next();
+                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","idProyecto").equals(reader.getName())){
+                                
+                                       nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                       if (!"true".equals(nillableValue) && !"1".equals(nillableValue)){
+                                    
+
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setIdProyecto(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                            
+                                       } else {
+                                           
+                                           
+                                           reader.getElementText(); // throw away text nodes if any.
+                                       }
+                                      
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                else{
+                                    // A start element we are not expecting indicates an invalid parameter was passed
+                                    throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getName());
+                                }
+                              
+                            while (!reader.isStartElement() && !reader.isEndElement())
+                                reader.next();
+                            
+                                if (reader.isStartElement())
+                                // A start element we are not expecting indicates a trailing invalid property
+                                throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getName());
+                            
+
+
+
+            } catch (javax.xml.stream.XMLStreamException e) {
+                throw new java.lang.Exception(e);
+            }
+
+            return object;
+        }
+
+        }//end of factory class
+
+        
+
+        }
+           
+    
+            private  org.apache.axiom.om.OMElement  toOM(caf.war.CMPC.wsclient.cmpc.proceso.servicios.crearimportacion_wsd.CMPCProcesoServiciosCrearImportacion_WSDStub.CrearImportacionE param, boolean optimizeContent)
             throws org.apache.axis2.AxisFault {
 
             
                         try{
-                             return param.getOMElement(caf.war.CMPC.wsclient.cmpc.proceso.servicios.uploadplanilla_wsd.CMPCProcesoServiciosUploadPlanilla_WSDStub.UploadPlanillaE.MY_QNAME,
+                             return param.getOMElement(caf.war.CMPC.wsclient.cmpc.proceso.servicios.crearimportacion_wsd.CMPCProcesoServiciosCrearImportacion_WSDStub.CrearImportacionE.MY_QNAME,
                                           org.apache.axiom.om.OMAbstractFactory.getOMFactory());
                         } catch(org.apache.axis2.databinding.ADBException e){
                             throw org.apache.axis2.AxisFault.makeFault(e);
@@ -1918,12 +1840,12 @@
 
             }
         
-            private  org.apache.axiom.om.OMElement  toOM(caf.war.CMPC.wsclient.cmpc.proceso.servicios.uploadplanilla_wsd.CMPCProcesoServiciosUploadPlanilla_WSDStub.UploadPlanillaResponseE param, boolean optimizeContent)
+            private  org.apache.axiom.om.OMElement  toOM(caf.war.CMPC.wsclient.cmpc.proceso.servicios.crearimportacion_wsd.CMPCProcesoServiciosCrearImportacion_WSDStub.CrearImportacionResponseE param, boolean optimizeContent)
             throws org.apache.axis2.AxisFault {
 
             
                         try{
-                             return param.getOMElement(caf.war.CMPC.wsclient.cmpc.proceso.servicios.uploadplanilla_wsd.CMPCProcesoServiciosUploadPlanilla_WSDStub.UploadPlanillaResponseE.MY_QNAME,
+                             return param.getOMElement(caf.war.CMPC.wsclient.cmpc.proceso.servicios.crearimportacion_wsd.CMPCProcesoServiciosCrearImportacion_WSDStub.CrearImportacionResponseE.MY_QNAME,
                                           org.apache.axiom.om.OMAbstractFactory.getOMFactory());
                         } catch(org.apache.axis2.databinding.ADBException e){
                             throw org.apache.axis2.AxisFault.makeFault(e);
@@ -1933,14 +1855,14 @@
             }
         
                                     
-                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, caf.war.CMPC.wsclient.cmpc.proceso.servicios.uploadplanilla_wsd.CMPCProcesoServiciosUploadPlanilla_WSDStub.UploadPlanillaE param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
+                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, caf.war.CMPC.wsclient.cmpc.proceso.servicios.crearimportacion_wsd.CMPCProcesoServiciosCrearImportacion_WSDStub.CrearImportacionE param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                                         throws org.apache.axis2.AxisFault{
 
                                              
                                                     try{
 
                                                             org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
-                                                            emptyEnvelope.getBody().addChild(param.getOMElement(caf.war.CMPC.wsclient.cmpc.proceso.servicios.uploadplanilla_wsd.CMPCProcesoServiciosUploadPlanilla_WSDStub.UploadPlanillaE.MY_QNAME,factory));
+                                                            emptyEnvelope.getBody().addChild(param.getOMElement(caf.war.CMPC.wsclient.cmpc.proceso.servicios.crearimportacion_wsd.CMPCProcesoServiciosCrearImportacion_WSDStub.CrearImportacionE.MY_QNAME,factory));
                                                             return emptyEnvelope;
                                                         } catch(org.apache.axis2.databinding.ADBException e){
                                                             throw org.apache.axis2.AxisFault.makeFault(e);
@@ -1970,16 +1892,16 @@
 
         try {
         
-                if (caf.war.CMPC.wsclient.cmpc.proceso.servicios.uploadplanilla_wsd.CMPCProcesoServiciosUploadPlanilla_WSDStub.UploadPlanillaE.class.equals(type)){
+                if (caf.war.CMPC.wsclient.cmpc.proceso.servicios.crearimportacion_wsd.CMPCProcesoServiciosCrearImportacion_WSDStub.CrearImportacionE.class.equals(type)){
                 
-                           return caf.war.CMPC.wsclient.cmpc.proceso.servicios.uploadplanilla_wsd.CMPCProcesoServiciosUploadPlanilla_WSDStub.UploadPlanillaE.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                           return caf.war.CMPC.wsclient.cmpc.proceso.servicios.crearimportacion_wsd.CMPCProcesoServiciosCrearImportacion_WSDStub.CrearImportacionE.Factory.parse(param.getXMLStreamReaderWithoutCaching());
                     
 
                 }
            
-                if (caf.war.CMPC.wsclient.cmpc.proceso.servicios.uploadplanilla_wsd.CMPCProcesoServiciosUploadPlanilla_WSDStub.UploadPlanillaResponseE.class.equals(type)){
+                if (caf.war.CMPC.wsclient.cmpc.proceso.servicios.crearimportacion_wsd.CMPCProcesoServiciosCrearImportacion_WSDStub.CrearImportacionResponseE.class.equals(type)){
                 
-                           return caf.war.CMPC.wsclient.cmpc.proceso.servicios.uploadplanilla_wsd.CMPCProcesoServiciosUploadPlanilla_WSDStub.UploadPlanillaResponseE.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                           return caf.war.CMPC.wsclient.cmpc.proceso.servicios.crearimportacion_wsd.CMPCProcesoServiciosCrearImportacion_WSDStub.CrearImportacionResponseE.Factory.parse(param.getXMLStreamReaderWithoutCaching());
                     
 
                 }

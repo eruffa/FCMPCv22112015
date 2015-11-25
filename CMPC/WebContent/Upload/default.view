@@ -12,10 +12,37 @@
     <control component-type='com.webmethods.caf.faces.panel.PropertyGroup' renderer-type='com.webmethods.caf.faces.panel.PropertyGroup'>
       <property name='id' value='propertyGroup' />
       <control component-type='com.webmethods.caf.faces.panel.PropertyLine' renderer-type='com.webmethods.caf.faces.panel.PropertyLine'>
+        <property name='id' value='propertyLine1' />
+        <property name='label' value='Proyecto' />
+        <control component-type='com.webmethods.caf.faces.SelectOneMenu' renderer-type='com.webmethods.caf.faces.Menu'>
+          <property name='disabledClass' value='disabled' />
+          <property name='enabledClass' value='enabled' />
+          <property name='id' value='htmlSelectOneMenu' />
+          <property name='required' value='true' />
+          <property name='value' value='#{UploadDefaultviewView.idProyecto}' />
+          <property name='width' value='input20' />
+          <control component-type='javax.faces.SelectItem' renderer-type=''>
+            <property name='id' value='selectItem' />
+            <property name='itemLabel' value='Seleccione' />
+          </control>
+          <control component-type='javax.faces.SelectItem' renderer-type=''>
+            <property name='id' value='selectItem1' />
+            <property name='itemLabel' value='Proyecto 1' />
+            <property name='itemValue' value='1' />
+          </control>
+          <control component-type='javax.faces.SelectItem' renderer-type=''>
+            <property name='id' value='selectItem2' />
+            <property name='itemLabel' value='Proyecto 2' />
+            <property name='itemValue' value='2' />
+          </control>
+        </control>
+      </control>
+      <control component-type='com.webmethods.caf.faces.panel.PropertyLine' renderer-type='com.webmethods.caf.faces.panel.PropertyLine'>
         <property name='id' value='propertyLine' />
         <property name='label' value='Archivo' />
         <control component-type='com.webmethods.caf.faces.input.File' renderer-type='com.webmethods.caf.faces.input.File'>
           <property name='id' value='file' />
+          <property name='required' value='true' />
           <property name='value' value='#{UploadDefaultviewView.fileItem}' />
         </control>
       </control>

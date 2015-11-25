@@ -3,6 +3,9 @@
  */
 package caf.war.CMPC.upload;
 
+import java.io.PrintWriter;
+import java.io.StringWriter;
+
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
@@ -39,7 +42,14 @@ public class UploadDefaultviewView  extends   com.webmethods.caf.faces.bean.Base
 	private org.apache.commons.fileupload.FileItem fileItem = null;
 	private static final String[][] FILEITEM_PROPERTY_BINDINGS = new String[][] {
 	};
-	private transient caf.war.CMPC.wsclient.cmpc.proceso.servicios.uploadplanilla_wsd.UploadPlanilla uploadPlanilla = null;
+	private java.lang.String idProyecto;
+	private transient caf.war.CMPC.wsclient.cmpc.proceso.servicios.crearimportacion_wsd.CrearImportacion1 crearImportacion = null;
+	private static final String[][] CREARIMPORTACION_PROPERTY_BINDINGS = new String[][] {
+		{"#{CrearImportacion.authCredentials.authenticationMethod}", "1"},
+		{"#{CrearImportacion.authCredentials.requiresAuth}", "true"},
+		{"#{CrearImportacion.autoRefresh}", "false"},
+	};
+	private transient caf.war.CMPC.wsclient.cmpc.proceso.servicios.uploadplanilla_wsd.UploadPlanilla1 uploadPlanilla = null;
 	private static final String[][] UPLOADPLANILLA_PROPERTY_BINDINGS = new String[][] {
 		{"#{UploadPlanilla.authCredentials.authenticationMethod}", "1"},
 		{"#{UploadPlanilla.authCredentials.requiresAuth}", "true"},
@@ -80,9 +90,13 @@ public class UploadDefaultviewView  extends   com.webmethods.caf.faces.bean.Base
 
 	public String actionUpload() {
 		try {
+			getCrearImportacion().getParameters().getCrearImportacion().getCrearImportacion().setIdProyecto(getIdProyecto());
+			getCrearImportacion().refresh();
+			String idImportacion = getCrearImportacion().getResult().getCrearImportacionResponse().getIdImportacion();
 			String path = FileUploader.uploadFile(getFileItem().getName(), getFileItem().get());
 			
 			getUploadPlanilla().getParameters().getUploadPlanilla().getUploadPlanilla().setNombreArchivo(path);
+			getUploadPlanilla().getParameters().getUploadPlanilla().getUploadPlanilla().setIdImportacion(idImportacion);
 			getUploadPlanilla().refresh();
 			String resultado = getUploadPlanilla().getResult().getUploadPlanillaResponse().getResultadoLectura();
 			if (!resultado.equalsIgnoreCase("Ok")) {
@@ -91,15 +105,36 @@ public class UploadDefaultviewView  extends   com.webmethods.caf.faces.bean.Base
 				getFacesContext().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Archivo subido exitosamente", null));
 			}
 		} catch (Exception e) {
-			getFacesContext().addMessage(null, new FacesMessage("Error al subir: " + e.getMessage()));
+			StringWriter sw = new StringWriter();
+			PrintWriter pw = new PrintWriter(sw);
+			e.printStackTrace(pw);
+			getFacesContext().addMessage(null, new FacesMessage("Error al subir: " + e.getMessage(), sw.toString()));
 		}
 	    
 		return null;
 	}
 
-	public caf.war.CMPC.wsclient.cmpc.proceso.servicios.uploadplanilla_wsd.UploadPlanilla getUploadPlanilla()  {
+	public java.lang.String getIdProyecto()  {
+		
+		return idProyecto;
+	}
+
+	public void setIdProyecto(java.lang.String idProyecto)  {
+		this.idProyecto = idProyecto;
+	}
+
+	public caf.war.CMPC.wsclient.cmpc.proceso.servicios.crearimportacion_wsd.CrearImportacion1 getCrearImportacion()  {
+		if (crearImportacion == null) {
+		    crearImportacion = (caf.war.CMPC.wsclient.cmpc.proceso.servicios.crearimportacion_wsd.CrearImportacion1)resolveExpression("#{CrearImportacion}");
+		}
+	
+	    resolveDataBinding(CREARIMPORTACION_PROPERTY_BINDINGS, crearImportacion, "crearImportacion", false, false);
+		return crearImportacion;
+	}
+
+	public caf.war.CMPC.wsclient.cmpc.proceso.servicios.uploadplanilla_wsd.UploadPlanilla1 getUploadPlanilla()  {
 		if (uploadPlanilla == null) {
-		    uploadPlanilla = (caf.war.CMPC.wsclient.cmpc.proceso.servicios.uploadplanilla_wsd.UploadPlanilla)resolveExpression("#{UploadPlanilla}");
+		    uploadPlanilla = (caf.war.CMPC.wsclient.cmpc.proceso.servicios.uploadplanilla_wsd.UploadPlanilla1)resolveExpression("#{UploadPlanilla}");
 		}
 	
 	    resolveDataBinding(UPLOADPLANILLA_PROPERTY_BINDINGS, uploadPlanilla, "uploadPlanilla", false, false);

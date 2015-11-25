@@ -9,9 +9,58 @@
   <control component-type='com.webmethods.caf.faces.command.CommandForm' renderer-type='com.webmethods.caf.faces.Form'>
     <property name='defaultFocus' value='_first' />
     <property name='id' value='defaultForm' />
+    <control component-type='com.webmethods.caf.faces.panel.PropertyGroup' renderer-type='com.webmethods.caf.faces.panel.PropertyGroup'>
+      <property name='id' value='propertyGroup' />
+      <property name='label' value='insert text here' />
+      <control component-type='com.webmethods.caf.faces.panel.PropertyLine' renderer-type='com.webmethods.caf.faces.panel.PropertyLine'>
+        <property name='id' value='propertyLine' />
+        <property name='label' value='Mes' />
+        <control component-type='com.webmethods.caf.faces.input.DateInput' renderer-type='com.webmethods.caf.faces.input.DateInput'>
+          <property name='id' value='dateInput' />
+          <property name='pattern' value='MM/yyyy' />
+          <property name='showTime' value='false' />
+          <property name='value' value='#{PruebaDefaultviewView.selectorPeriodo}' />
+          <property name='width' value='input6' />
+        </control>
+      </control>
+      <control component-type='com.webmethods.caf.faces.panel.PropertyLine' renderer-type='com.webmethods.caf.faces.panel.PropertyLine'>
+        <property name='id' value='propertyLine1' />
+        <control component-type='com.webmethods.caf.faces.command.async.Button' renderer-type='com.webmethods.caf.faces.command.async.Button'>
+          <property name='action' value='#{PruebaDefaultviewView.actionSeleccionaPeriodo}' signature='java.lang.String action()' />
+          <property name='id' value='button' />
+          <property name='value' value='Mostrar' />
+          <control component-type='javax.faces.Parameter' renderer-type=''>
+            <property name='name' value='mes' />
+            <property name='value' value='#{PruebaDefaultviewView.mes}' />
+          </control>
+          <control component-type='javax.faces.Parameter' renderer-type=''>
+            <property name='name' value='anyo' />
+            <property name='value' value='#{PruebaDefaultviewView.anyo}' />
+          </control>
+        </control>
+      </control>
+      <control component-type='com.webmethods.caf.faces.panel.PropertyLine' renderer-type='com.webmethods.caf.faces.panel.PropertyLine'>
+        <property name='id' value='propertyLine2' />
+        <property name='label' value='Mes' />
+        <control component-type='javax.faces.HtmlInputText' renderer-type='com.webmethods.caf.faces.Text'>
+          <property name='id' value='htmlInputText' />
+          <property name='value' value='#{PruebaDefaultviewView.mes}' />
+          <property name='width' value='input20' />
+        </control>
+      </control>
+      <control component-type='com.webmethods.caf.faces.panel.PropertyLine' renderer-type='com.webmethods.caf.faces.panel.PropertyLine'>
+        <property name='id' value='propertyLine3' />
+        <property name='label' value='Anyo' />
+        <control component-type='javax.faces.HtmlInputText' renderer-type='com.webmethods.caf.faces.Text'>
+          <property name='id' value='htmlInputText1' />
+          <property name='value' value='#{PruebaDefaultviewView.anyo}' />
+          <property name='width' value='input20' />
+        </control>
+      </control>
+    </control>
     <control component-type='com.webmethods.caf.faces.component.portlet.PortletInclude' renderer-type='com.webmethods.caf.faces.render.html.output.PortletIncludeRenderer'>
       <property name='id' value='portletInclude' />
-      <property name='portlet' value='/meta/default/fcmpcportales___calendario/0000010173' />
+      <property name='portlet' value='/meta/default/fcmpcportales___calendario/0000010244' />
       <control component-type='javax.faces.Parameter' renderer-type=''>
         <property name='name' value='mes' />
         <property name='value' value='#{PruebaDefaultviewView.mes}' />

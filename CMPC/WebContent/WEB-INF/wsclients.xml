@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <wsclients>
-<webservice authenticationMethod="1" isConnectionURL="http://10.5.21.122:5555/ws/CMPC.proceso.servicios:uploadPlanilla_WSD?WSDL" isService="CMPC.proceso.servicios:uploadPlanilla_WSD" name="uploadPlanilla_WSD" package="caf.war.CMPC.wsclient.cmpc.proceso.servicios.uploadplanilla_wsd" password="{AES}Y5IgMqjfvkgbg7p5VUZztw==" requiresAuth="true" soapLibrary="wss" useNamespaceForPackage="false" username="Administrator" wsdlFile="src/caf/war/CMPC/wsclient/cmpc/proceso/servicios/uploadplanilla_wsd/uploadPlanilla_WSD.wsdl" wsdlURL="http://10.5.21.122:5555/ws/CMPC.proceso.servicios:uploadPlanilla_WSD?WSDL">
+<webservice authenticationMethod="-1" isConnectionURL="http://sim-wm02-w2k8:5555/ws/CMPC.proceso.servicios:crearImportacion_WSD?WSDL" isService="CMPC.proceso.servicios:crearImportacion_WSD" name="crearImportacion_WSD" package="caf.war.CMPC.wsclient.cmpc.proceso.servicios.crearimportacion_wsd" password="{AES}Y5IgMqjfvkgbg7p5VUZztw==" requiresAuth="true" soapLibrary="wss" useNamespaceForPackage="false" username="Administrator" wsdlFile="src/caf/war/CMPC/wsclient/cmpc/proceso/servicios/crearimportacion_wsd/crearImportacion_WSD.wsdl" wsdlURL="http://sim-wm02-w2k8:5555/ws/CMPC.proceso.servicios:crearImportacion_WSD?WSDL">
+<wsproxy className="caf.war.CMPC.wsclient.cmpc.proceso.servicios.crearimportacion_wsd.CMPCProcesoServiciosCrearImportacion_WSDStub">
+<wsclient managedBean="CrearImportacion" operation="crearImportacion"/>
+</wsproxy>
+<generatedfile>caf\war\CMPC\wsclient\cmpc\proceso\servicios\crearimportacion_wsd\CMPCProcesoServiciosCrearImportacion_WSDStub.java</generatedfile>
+</webservice>
+<webservice authenticationMethod="-1" isConnectionURL="http://sim-wm02-w2k8:5555/ws/CMPC.proceso.servicios:uploadPlanilla_WSD?WSDL" isService="CMPC.proceso.servicios:uploadPlanilla_WSD" name="uploadPlanilla_WSD" package="caf.war.CMPC.wsclient.cmpc.proceso.servicios.uploadplanilla_wsd" password="{AES}Y5IgMqjfvkgbg7p5VUZztw==" requiresAuth="true" soapLibrary="wss" useNamespaceForPackage="false" username="Administrator" wsdlFile="src/caf/war/CMPC/wsclient/cmpc/proceso/servicios/uploadplanilla_wsd/uploadPlanilla_WSD.wsdl" wsdlURL="http://sim-wm02-w2k8:5555/ws/CMPC.proceso.servicios:uploadPlanilla_WSD?WSDL">
 <wsproxy className="caf.war.CMPC.wsclient.cmpc.proceso.servicios.uploadplanilla_wsd.CMPCProcesoServiciosUploadPlanilla_WSDStub">
 <wsclient managedBean="UploadPlanilla" operation="uploadPlanilla"/>
 </wsproxy>
