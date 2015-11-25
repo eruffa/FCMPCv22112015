@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="leeTablaObjetivo_WSD" targetNamespace="http://localhost.localdomain/sFCMPC.services" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soapjms="http://www.w3.org/2010/soapjms/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://localhost.localdomain/sFCMPC.services" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://localhost.localdomain/sFCMPC.services" xmlns:tns="http://localhost.localdomain/sFCMPC.services" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+          <xsd:element name="leeTablaObjetivo" type="tns:leeTablaObjetivo"/>
+          <xsd:element name="leeTablaObjetivoResponse" type="tns:leeTablaObjetivoResponse"/>
+          <xsd:complexType name="leeTablaObjetivo">
+            <xsd:sequence>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="leeTablaObjetivoResponse">
+            <xsd:sequence>
+              <xsd:element name="rtabla" nillable="true" type="tns:rtabla"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="rtabla">
+            <xsd:sequence>
+              <xsd:element maxOccurs="unbounded" name="solucion" nillable="true" type="tns:solucion"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="solucion">
+            <xsd:sequence>
+              <xsd:element name="campo" nillable="true" type="xsd:string"/>
+              <xsd:element name="valor" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        	</xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="leeTablaObjetivo_WSD_PortType_leeTablaObjetivoResponse">
+    <wsdl:part name="parameters" element="tns:leeTablaObjetivoResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="leeTablaObjetivo_WSD_PortType_leeTablaObjetivo">
+    <wsdl:part name="parameters" element="tns:leeTablaObjetivo">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="leeTablaObjetivo_WSD_PortType">
+    <wsdl:operation name="leeTablaObjetivo">
+      <wsdl:input message="tns:leeTablaObjetivo_WSD_PortType_leeTablaObjetivo">
+    </wsdl:input>
+      <wsdl:output message="tns:leeTablaObjetivo_WSD_PortType_leeTablaObjetivoResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="sFCMPC_services_leeTablaObjetivo_WSD_Binder" type="tns:leeTablaObjetivo_WSD_PortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="leeTablaObjetivo">
+      <soap:operation soapAction="sFCMPC_services_leeTablaObjetivo_WSD_Binder_leeTablaObjetivo" style="document"/>
+      <wsdl:input>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="sFCMPC.services.leeTablaObjetivo_WSD">
+    <wsdl:port name="sFCMPC_services_leeTablaObjetivo_WSD_Port" binding="tns:sFCMPC_services_leeTablaObjetivo_WSD_Binder">
+      <soap:address location="http://localhost.localdomain:5555/ws/sFCMPC.services.leeTablaObjetivo_WSD/sFCMPC_services_leeTablaObjetivo_WSD_Port"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

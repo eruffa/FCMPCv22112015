@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="generaCalendario_WSD" targetNamespace="http://localhost.localdomain/calendario.service" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soapjms="http://www.w3.org/2010/soapjms/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://localhost.localdomain/calendario.service" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://localhost.localdomain/calendario.service" xmlns:tns="http://localhost.localdomain/calendario.service" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+          <xsd:element name="generaCalendario" type="tns:generaCalendario"/>
+          <xsd:element name="generaCalendarioResponse" type="tns:generaCalendarioResponse"/>
+          <xsd:complexType name="generaCalendario">
+            <xsd:sequence>
+              <xsd:element name="entrada" nillable="true" type="tns:entrada"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="entrada">
+            <xsd:sequence>
+              <xsd:element name="mes" nillable="true" type="xsd:string"/>
+              <xsd:element name="anyo" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="generaCalendarioResponse">
+            <xsd:sequence>
+              <xsd:element name="salida" nillable="true" type="tns:salida"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="salida">
+            <xsd:sequence>
+              <xsd:element maxOccurs="unbounded" name="Mes" nillable="true" type="tns:Mes"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="Mes">
+            <xsd:sequence>
+              <xsd:element name="Dom" nillable="true" type="xsd:string"/>
+              <xsd:element name="domAct" nillable="true" type="xsd:string"/>
+              <xsd:element name="Lun" nillable="true" type="xsd:string"/>
+              <xsd:element name="lunAct" nillable="true" type="xsd:string"/>
+              <xsd:element name="Mar" nillable="true" type="xsd:string"/>
+              <xsd:element name="marAct" nillable="true" type="xsd:string"/>
+              <xsd:element name="Mie" nillable="true" type="xsd:string"/>
+              <xsd:element name="mieAct" nillable="true" type="xsd:string"/>
+              <xsd:element name="Jue" nillable="true" type="xsd:string"/>
+              <xsd:element name="jueAct" nillable="true" type="xsd:string"/>
+              <xsd:element name="Vie" nillable="true" type="xsd:string"/>
+              <xsd:element name="vieAct" nillable="true" type="xsd:string"/>
+              <xsd:element name="Sab" nillable="true" type="xsd:string"/>
+              <xsd:element name="sabAct" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        	</xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="generaCalendario_WSD_PortType_generaCalendarioResponse">
+    <wsdl:part name="parameters" element="tns:generaCalendarioResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="generaCalendario_WSD_PortType_generaCalendario">
+    <wsdl:part name="parameters" element="tns:generaCalendario">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="generaCalendario_WSD_PortType">
+    <wsdl:operation name="generaCalendario">
+      <wsdl:input message="tns:generaCalendario_WSD_PortType_generaCalendario">
+    </wsdl:input>
+      <wsdl:output message="tns:generaCalendario_WSD_PortType_generaCalendarioResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="calendario_service_generaCalendario_WSD_Binder" type="tns:generaCalendario_WSD_PortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="generaCalendario">
+      <soap:operation soapAction="calendario_service_generaCalendario_WSD_Binder_generaCalendario" style="document"/>
+      <wsdl:input>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="calendario.service.generaCalendario_WSD">
+    <wsdl:port name="calendario_service_generaCalendario_WSD_Port" binding="tns:calendario_service_generaCalendario_WSD_Binder">
+      <soap:address location="http://localhost.localdomain:5555/ws/calendario.service.generaCalendario_WSD/calendario_service_generaCalendario_WSD_Port"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
