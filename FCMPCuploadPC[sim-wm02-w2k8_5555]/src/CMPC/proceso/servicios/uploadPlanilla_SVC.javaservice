@@ -1,0 +1,263 @@
+package CMPC.proceso.servicios;
+
+import com.wm.data.*;
+import com.wm.util.Values;
+import com.wm.app.b2b.server.Service;
+import com.wm.app.b2b.server.ServiceException;
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.Iterator;
+import java.util.List;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public final class uploadPlanilla_SVC
+
+{
+
+	/** 
+	 * The primary method for the Java service
+	 *
+	 * @param pipeline
+	 *            The IData pipeline
+	 * @throws ServiceException
+	 */
+	public static final void uploadPlanilla(IData pipeline) throws ServiceException {
+		String resultado = "Ok";
+		List<ModeloPlanComunical> lista = new ArrayList<ModeloPlanComunical>();
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+		SimpleDateFormat sdf1 = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+		
+		log(sdf1.format(new Date()), "------------------------- Comienzo integracion: ");
+		try {
+			IDataCursor pipelineCursor = pipeline.getCursor();
+			String	nombreArchivo = IDataUtil.getString( pipelineCursor, "nombreArchivo" );
+			String idImportacion = IDataUtil.getString( pipelineCursor, "idImportacion" );
+			InputStream ExcelFileToRead = new FileInputStream(nombreArchivo);
+			XSSFWorkbook wb = new XSSFWorkbook(ExcelFileToRead);
+			
+			XSSFWorkbook test = new XSSFWorkbook();
+			
+			XSSFSheet sheet = wb.getSheetAt(0);
+			XSSFRow row;
+			XSSFCell cell;
+			
+			Iterator rows = sheet.rowIterator();
+			
+			while (rows.hasNext())
+			{
+			    row=(XSSFRow) rows.next();
+			    Iterator cells = row.cellIterator();
+			    ModeloPlanComunical modelo = new ModeloPlanComunical();
+			    while (cells.hasNext())
+			    {
+			        String value = "";
+			        Date dateValue = null;
+			        cell=(XSSFCell) cells.next();
+			
+			        if (cell.getCellType() == XSSFCell.CELL_TYPE_STRING)
+			        {
+			            //System.out.print(cell.getStringCellValue()+" ");
+			            value = cell.getStringCellValue();
+			        }
+			        else if(cell.getCellType() == XSSFCell.CELL_TYPE_NUMERIC)
+			        {
+			            if (cell.getDateCellValue() != null) {
+		            		value = sdf.format(cell.getDateCellValue());
+			            	//dateValue = cell.getDateCellValue();
+			            }
+			            else dateValue = null;
+			        }
+		
+			        switch (cell.getColumnIndex()) {
+			            case 0:
+			                modelo.setActividad(value);
+			                break;
+			            case 1:
+			                modelo.setTema(value);
+			                break;
+			            case 2:
+			                modelo.setFechaInicioPeriodo(value);
+			                break;
+			            case 3:
+			                modelo.setFechaFinPeriodo(value);
+			                break;
+			            case 4:
+			                modelo.setFechaDeadline(value);
+			                break;
+			            case 5:
+			            	modelo.setParticipantes(value);
+			            	break;
+			        }
+			    }
+			    lista.add(modelo);
+			}
+			
+			if (lista != null && lista.size() > 0) {
+				//Saco la primera fila porque son los encabezados
+				lista.remove(0);
+				//String valorSeq = obtenerValorSeq();
+				Date fechaImportacion = new Date();
+				
+				if (lista.size() > 0) {
+					for (ModeloPlanComunical m: lista) {
+						if (m.getActividad() != null && !m.getActividad().equals("")) invokeGuardarLineaPlan(idImportacion, sdf.format(fechaImportacion), m);
+					}
+				}
+			}
+		} catch (Exception e) {
+			resultado = e.getMessage();
+			
+			log(e.getMessage(), "------------------------------- Upload CMPC");
+		}
+		
+		//Devuelve el resultado
+		IDataCursor pipelineCursor_1 = pipeline.getCursor();
+		IDataUtil.put( pipelineCursor_1, "resultadoLectura", resultado );
+		pipelineCursor_1.destroy();
+		
+		log(sdf1.format(new Date()), "------------------------- Fin integracion: ");
+	}
+	
+	// --- <<IS-BEGIN-SHARED-SOURCE-AREA>> ---
+	
+	private static void log(String message, String function) {
+		// input
+		IData input = IDataFactory.create();
+		IDataCursor inputCursor = input.getCursor();
+		IDataUtil.put( inputCursor, "message", message );
+		IDataUtil.put( inputCursor, "function", function );
+		//IDataUtil.put( inputCursor, "level", "level" );
+		inputCursor.destroy();
+	
+		// output
+		IData 	output = IDataFactory.create();
+		try{
+			output = Service.doInvoke( "pub.flow", "debugLog", input );
+		}catch( Exception e){}
+		
+	}
+	
+	private static String obtenerValorSeq () {
+		// input
+		IData input = IDataFactory.create();
+	
+		// output
+		IData 	output = IDataFactory.create();
+		try{
+			output = Service.doInvoke( "CMPC.proceso.servicios", "obtenerSeqPlanComunicacional", input );
+		}catch( Exception e){}
+		IDataCursor outputCursor = output.getCursor();
+			String	valorSeq = IDataUtil.getString( outputCursor, "valorSeq" );
+		outputCursor.destroy();
+	
+		return valorSeq;
+	}
+	private static void invokeGuardarLineaPlan (String idImportacion, String fechaImportacion, ModeloPlanComunical modelo) {
+	
+		// input
+		IData input = IDataFactory.create();
+		IDataCursor inputCursor = input.getCursor();
+		IDataUtil.put( inputCursor, "actividad", modelo.getActividad() );
+		IDataUtil.put( inputCursor, "tema", modelo.getTema() );
+		Object fechaInicioPeriodo = new Object();
+		IDataUtil.put( inputCursor, "fechaInicioPeriodo", modelo.getFechaInicioPeriodo());
+		Object fechaFinPeriodo = new Object();
+		IDataUtil.put( inputCursor, "fechaFinPeriodo", modelo.getFechaFinPeriodo());
+		Object fechaDeadline = new Object();
+		IDataUtil.put( inputCursor, "fechaDeadline", modelo.getFechaDeadline());
+		IDataUtil.put( inputCursor, "idImportacion", idImportacion);
+		IDataUtil.put( inputCursor, "fechaImportacion", fechaImportacion);
+		IDataUtil.put( inputCursor, "participantes", modelo.getParticipantes());
+		inputCursor.destroy();
+	
+		// output
+		IData 	output = IDataFactory.create();
+		try{
+			output = Service.doInvoke( "CMPC.proceso.servicios", "guardarLineaPlan", input );
+		}catch( Exception e){}
+		
+	}
+	private static class ModeloPlanComunical {
+	    private String actividad;
+	    private String tema;
+	    private String fechaInicioPeriodo;
+	    private String fechaFinPeriodo;
+	    private String fechaDeadline;
+	    private String participantes;
+	
+	    public String getParticipantes() {
+			return participantes;
+		}
+	
+		public void setParticipantes(String participantes) {
+			this.participantes = participantes;
+		}
+	
+		public String getActividad() {
+	        return actividad;
+	    }
+	
+	    public void setActividad(String actividad) {
+	        this.actividad = actividad;
+	    }
+	
+	    public String getTema() {
+	        return tema;
+	    }
+	
+	    public void setTema(String tema) {
+	        this.tema = tema;
+	    }
+	
+	    public String getFechaInicioPeriodo() {
+	        return fechaInicioPeriodo;
+	    }
+	
+	    public void setFechaInicioPeriodo(String fechaInicioPeriodo) {
+	        this.fechaInicioPeriodo = fechaInicioPeriodo;
+	    }
+	
+	    public String getFechaFinPeriodo() {
+	        return fechaFinPeriodo;
+	    }
+	
+	    public void setFechaFinPeriodo(String fechaFinPeriodo) {
+	        this.fechaFinPeriodo = fechaFinPeriodo;
+	    }
+	
+	    public String getFechaDeadline() {
+	        return fechaDeadline;
+	    }
+	
+	    public void setFechaDeadline(String fechaDeadline) {
+	        this.fechaDeadline = fechaDeadline;
+	    }
+	
+	    @Override
+	    public String toString() {
+	        return "ModeloPlanComunical[" +
+	                "actividad='" + actividad + '\'' +
+	                ", tema='" + tema + '\'' +
+	                ", fechaInicioPeriodo='" + fechaInicioPeriodo + '\'' +
+	                ", fechaFinPeriodo='" + fechaFinPeriodo + '\'' +
+	                ", fechaDeadline='" + fechaDeadline + '\'' +
+	                ']';
+	    }
+	}
+		
+	
+	// --- <<IS-END-SHARED-SOURCE-AREA>> ---
+
+	final static uploadPlanilla_SVC _instance = new uploadPlanilla_SVC();
+
+	static uploadPlanilla_SVC _newInstance() { return new uploadPlanilla_SVC(); }
+
+	static uploadPlanilla_SVC _cast(Object o) { return (uploadPlanilla_SVC)o; }
+
+}
