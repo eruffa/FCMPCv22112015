@@ -1,0 +1,201 @@
+package calendario.service;
+
+import com.wm.data.*;
+import com.wm.util.Values;
+import com.wm.app.b2b.server.Service;
+import com.wm.app.b2b.server.ServiceException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
+public final class servicioGenerador_SVC
+
+{
+
+	/** 
+	 * The primary method for the Java service
+	 *
+	 * @param pipeline
+	 *            The IData pipeline
+	 * @throws ServiceException
+	 */
+	public static final void servicioGenerador(IData pipeline)
+			throws ServiceException {
+		// pipeline
+		IDataCursor pipelineCursor = pipeline.getCursor();
+		String mes ="";
+		String anyo = "";
+			// entrada
+			IData	entrada = IDataUtil.getIData( pipelineCursor, "entrada" );
+			if ( entrada != null)
+			{
+				IDataCursor entradaCursor = entrada.getCursor();
+						mes = IDataUtil.getString( entradaCursor, "mes" );
+						anyo = IDataUtil.getString( entradaCursor, "anyo" );
+				entradaCursor.destroy();
+			}
+		pipelineCursor.destroy();
+		
+		// pipeline
+		Date yourDate = new Date();
+		IDataCursor pipelineCursor_1 = pipeline.getCursor();
+		String input_date="01/"+mes+"/"+anyo;
+		  SimpleDateFormat format1=new SimpleDateFormat("dd/MM/yyyy");
+		  try{
+		  yourDate=format1.parse(input_date);} catch(Exception o){}
+		Calendar c = Calendar.getInstance();
+		
+		c.setTime(yourDate);
+		int last = c.getActualMaximum(Calendar.DAY_OF_MONTH);
+		int dayOfWeek = c.get(Calendar.DAY_OF_WEEK);
+		
+		int i = 1;
+		String dom="";
+		String lun="";
+		String mar="";
+		String mie="";
+		String jue="";
+		String vie="";
+		String sab="";
+		String domAct="";
+		String lunAct="";
+		String marAct="";
+		String mieAct="";
+		String jueAct="";
+		String vieAct="";
+		String sabAct="";
+		// Mes
+		IData	salida = IDataFactory.create();
+		IDataCursor salidaCursor = salida.getCursor();
+		IData[] Mes = null;
+		int fin = 6;
+		if ((dayOfWeek == 6 && last ==31)||(dayOfWeek == 7 && last >=30))
+			Mes = new IData[6];
+		else
+			if ((dayOfWeek == 1 && last < 29))
+			{
+				Mes = new IData[4];
+				fin = 4;
+			}
+			else
+			{
+			Mes = new IData[5];
+			fin = 5;
+			}
+		for(int k=0;k<fin;k++)
+		{
+		Mes[k] = IDataFactory.create();
+		IDataCursor MesCursor = Mes[k].getCursor();
+		if ((dayOfWeek <= 1 || k >0 ) && last >= i)
+		{
+		     dom = String.valueOf(i);
+		     i++;
+		}
+		else dom = " ";
+		if ((dayOfWeek <= 2 || k >0) && last >= i)
+		{
+			 lun = String.valueOf(i);
+			 i++;
+		}
+		else lun = " ";
+		if ((dayOfWeek <=3 || k >0) && last >= i)
+		{
+			mar = String.valueOf(i);
+			i++;
+		
+		}
+		else mar = " ";
+		if ((dayOfWeek <= 4 || k >0)&& last >= i)
+		{
+			mie = String.valueOf(i);
+		    i++;
+		}
+		else mie = " ";
+		if ((dayOfWeek <= 5 || k >0)&& last >= i)
+		{
+			jue = String.valueOf(i);
+			i++;
+		}
+		else jue = " ";
+		if ((dayOfWeek <= 6 || k >0)&& last >= i)
+		{
+			vie = String.valueOf(i);
+			i++;
+			
+		}
+		else vie = " ";
+		if ((dayOfWeek <= 7 || k >0)&& last >= i)
+		{
+			sab = String.valueOf(i);
+			i++;
+		}
+		else sab = " ";
+		
+		// salida
+		
+		
+		// salida.Mes
+		
+		IDataUtil.put( MesCursor, "Dom", dom );
+		IDataUtil.put( MesCursor, "domAct", "" );
+		IDataUtil.put( MesCursor, "Lun", lun );
+		IDataUtil.put( MesCursor, "lunAct", "" );
+		IDataUtil.put( MesCursor, "Mar", mar );
+		IDataUtil.put( MesCursor, "marAct", "" );
+		IDataUtil.put( MesCursor, "Mie", mie );
+		IDataUtil.put( MesCursor, "mieAct", "" );
+		IDataUtil.put( MesCursor, "Jue", jue );
+		IDataUtil.put( MesCursor, "jueAct", "" );
+		IDataUtil.put( MesCursor, "Vie", vie );
+		IDataUtil.put( MesCursor, "vieAct", "" );
+		IDataUtil.put( MesCursor, "Sab", sab );
+		IDataUtil.put( MesCursor, "sabAct", "" );
+		MesCursor.destroy();
+		}
+		IDataUtil.put( salidaCursor, "Mes", Mes );
+		salidaCursor.destroy();
+		IDataUtil.put( pipelineCursor_1, "salida", salida );
+		pipelineCursor_1.destroy();
+		
+			
+	}
+	
+	// --- <<IS-BEGIN-SHARED-SOURCE-AREA>> ---
+	
+	private static void log(String message, String function) {
+		// input
+		IData input = IDataFactory.create();
+		IDataCursor inputCursor = input.getCursor();
+		IDataUtil.put( inputCursor, "message", message );
+		IDataUtil.put( inputCursor, "function", function );
+		//IDataUtil.put( inputCursor, "level", "level" );
+		inputCursor.destroy();
+	
+		// output
+		IData 	output = IDataFactory.create();
+		try{
+			output = Service.doInvoke( "pub.flow", "debugLog", input );
+		}catch( Exception e){}
+		
+	}
+		
+	
+	// --- <<IS-END-SHARED-SOURCE-AREA>> ---
+
+	/**
+	 * The service implementations given below are read-only and show only the
+	 * method definitions and not the complete implementation.
+	 */
+	public static final void comparaFechas(IData pipeline) throws ServiceException {
+	}
+	public static final void servicioCargaCalendario(IData pipeline)
+			throws ServiceException {
+	}
+
+	final static servicioGenerador_SVC _instance = new servicioGenerador_SVC();
+
+	static servicioGenerador_SVC _newInstance() { return new servicioGenerador_SVC(); }
+
+	static servicioGenerador_SVC _cast(Object o) { return (servicioGenerador_SVC)o; }
+
+}

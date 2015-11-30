@@ -1,0 +1,117 @@
+package calendario.service;
+
+import com.wm.data.*;
+import com.wm.util.Values;
+import com.wm.app.b2b.server.Service;
+import com.wm.app.b2b.server.ServiceException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
+public final class comparaFechas_SVC
+
+{
+
+	/** 
+	 * The primary method for the Java service
+	 *
+	 * @param pipeline
+	 *            The IData pipeline
+	 * @throws ServiceException
+	 */
+	public static final void comparaFechas(IData pipeline) throws ServiceException {
+		// pipeline
+		IDataCursor pipelineCursor = pipeline.getCursor();
+			String	fechaICompara = IDataUtil.getString( pipelineCursor, "fechaICompara" );
+			String	fechaOCompara = IDataUtil.getString( pipelineCursor, "fechaOCompara" );
+			String	dia = IDataUtil.getString( pipelineCursor, "dia" );
+			String	mes = IDataUtil.getString( pipelineCursor, "mes" );
+			String	anyo = IDataUtil.getString( pipelineCursor, "anyo" );
+			String	elemento = IDataUtil.getString( pipelineCursor, "elemento" );
+			String	resultado = IDataUtil.getString( pipelineCursor, "resultado" );
+			
+			StringBuilder sb = new StringBuilder();
+			/*sb.append(fechaICompara).append(" - ")
+			.append(fechaOCompara).append(" - ")
+			.append(dia).append(" - ")
+			.append(mes).append(" - ")
+			.append(anyo).append(" - ")
+			.append(elemento).append(" - ")
+			.append(resultado).append(" - ");
+		
+			log(sb.toString(), "-------------- Comparafechas: ");*/
+			
+			pipelineCursor.destroy();
+		if (!dia.equals(" "))
+		{
+		dia = dia.length()==1&&!dia.equals(" ")? "0"+dia:dia;
+		Date yourDate = new Date();
+		Date inicio = new Date();
+		Date finali = new Date();
+		if (resultado==null)resultado=" ";
+		String input_date=dia+"/"+mes+"/"+anyo;
+		  SimpleDateFormat format1=new SimpleDateFormat("dd/MM/yyyy");
+		  try{
+		  yourDate=format1.parse(input_date);
+		  inicio = format1.parse(fechaICompara);
+		  finali = format1.parse(fechaOCompara);} catch(Exception o){}
+		 
+		  if (inicio.before(yourDate)&&yourDate.before(finali))
+			  resultado = resultado+elemento+"\n";
+		  else 
+			  resultado = " ";
+		  if (!inicio.before(yourDate)&&!inicio.after(yourDate)) resultado = resultado+elemento+"\n";
+		  if (!finali.before(yourDate)&&!finali.after(yourDate)) resultado = resultado+elemento+"\n";
+		} else resultado = " ";
+		
+		// pipeline
+		IDataCursor pipelineCursor_1 = pipeline.getCursor();
+		IDataUtil.put( pipelineCursor_1, "dia", dia );
+		IDataUtil.put( pipelineCursor_1, "elemento", resultado );
+		pipelineCursor_1.destroy();
+		
+		/*sb.append("Dia: ").append(dia).append(" -- ")
+		.append("Elemento: ").append(resultado);
+		log(sb.toString(), "--------------------- ComparaFechas: ");*/
+	}
+	
+	// --- <<IS-BEGIN-SHARED-SOURCE-AREA>> ---
+	
+	private static void log(String message, String function) {
+		// input
+		IData input = IDataFactory.create();
+		IDataCursor inputCursor = input.getCursor();
+		IDataUtil.put( inputCursor, "message", message );
+		IDataUtil.put( inputCursor, "function", function );
+		//IDataUtil.put( inputCursor, "level", "level" );
+		inputCursor.destroy();
+	
+		// output
+		IData 	output = IDataFactory.create();
+		try{
+			output = Service.doInvoke( "pub.flow", "debugLog", input );
+		}catch( Exception e){}
+		
+	}
+		
+	
+	// --- <<IS-END-SHARED-SOURCE-AREA>> ---
+
+	/**
+	 * The service implementations given below are read-only and show only the
+	 * method definitions and not the complete implementation.
+	 */
+	public static final void servicioCargaCalendario(IData pipeline)
+			throws ServiceException {
+	}
+	public static final void servicioGenerador(IData pipeline)
+			throws ServiceException {
+	}
+
+	final static comparaFechas_SVC _instance = new comparaFechas_SVC();
+
+	static comparaFechas_SVC _newInstance() { return new comparaFechas_SVC(); }
+
+	static comparaFechas_SVC _cast(Object o) { return (comparaFechas_SVC)o; }
+
+}
