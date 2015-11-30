@@ -1,32 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <portlet-app version="1.0" xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd ">
-	<portlet>
-		<portlet-name>generaMarcoLogico</portlet-name>
-		<portlet-class>com.webmethods.caf.faces.portlet.FacesPortlet</portlet-class>
-		<init-param>
-			<name>ANNOTATED_PORTLET_ACTIONS</name>
-			<value>true</value>
-		</init-param>
-		<init-param>
-			<name>com.webmethods.caf.faces.portlet.INIT_VIEW</name>
-			<value>/GeneraMarcoLogico/default.view</value>
-		</init-param>
-		<supports>
-			<mime-type>text/html</mime-type>
-			<portlet-mode>view</portlet-mode>
-		</supports>
-		<supported-locale>en</supported-locale>
-		<resource-bundle>caf.war.fcmpcPortales.generamarcologico.GeneraMarcoLogicoResources</resource-bundle>
-		<portlet-info>
-			<title>generaMarcoLogico</title>
-		</portlet-info>
-		<portlet-preferences>
-			<preference>
-				<name>tipoProyecto</name>
-				<read-only>false</read-only>
-			</preference>
-		</portlet-preferences>
-	</portlet>
+
 	<portlet>
 		<portlet-name>prueba</portlet-name>
 		<portlet-class>com.webmethods.caf.faces.portlet.FacesPortlet</portlet-class>
@@ -69,15 +43,17 @@
 		<portlet-info>
 			<title>Calendario</title>
 		</portlet-info>
-	<portlet-preferences>
-		<preference>
-			<name>mes</name>
-			<read-only>false</read-only>
-		</preference>
-		<preference>
-			<name>anyo</name>
-			<read-only>false</read-only>
-		</preference></portlet-preferences></portlet>
+		<portlet-preferences>
+			<preference>
+				<name>mes</name>
+				<read-only>false</read-only>
+			</preference>
+			<preference>
+				<name>anyo</name>
+				<read-only>false</read-only>
+			</preference>
+		</portlet-preferences>
+	</portlet>
 	<user-attribute>
 		<name>user.default.time_zone</name>
 	</user-attribute>

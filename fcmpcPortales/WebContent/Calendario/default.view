@@ -69,6 +69,7 @@
               <property name='id' value='staticCell1' />
               <control component-type='com.webmethods.caf.faces.output.FormattedText' renderer-type='com.webmethods.caf.faces.output.FormattedText'>
                 <property name='id' value='htmlOutputText4' />
+                <property name='style' value='text-align:justify;list-style-type:circle;' />
                 <property name='value' value='#{me.domAct}' />
               </control>
             </control>
@@ -103,6 +104,7 @@
               <property name='id' value='staticCell3' />
               <control component-type='com.webmethods.caf.faces.output.FormattedText' renderer-type='com.webmethods.caf.faces.output.FormattedText'>
                 <property name='id' value='htmlOutputText8' />
+                <property name='style' value='text-align:justify;list-style-type:circle;' />
                 <property name='value' value='#{me.lunAct}' />
               </control>
             </control>
@@ -137,6 +139,7 @@
               <property name='id' value='staticCell4' />
               <control component-type='com.webmethods.caf.faces.output.FormattedText' renderer-type='com.webmethods.caf.faces.output.FormattedText'>
                 <property name='id' value='htmlOutputText12' />
+                <property name='style' value='text-align: justify;' />
                 <property name='value' value='#{me.marAct}' />
               </control>
             </control>
@@ -171,6 +174,7 @@
               <property name='id' value='staticCell7' />
               <control component-type='com.webmethods.caf.faces.output.FormattedText' renderer-type='com.webmethods.caf.faces.output.FormattedText'>
                 <property name='id' value='htmlOutputText16' />
+                <property name='style' value='text-align: justify;' />
                 <property name='value' value='#{me.mieAct}' />
               </control>
             </control>
@@ -205,6 +209,7 @@
               <property name='id' value='staticCell11' />
               <control component-type='com.webmethods.caf.faces.output.FormattedText' renderer-type='com.webmethods.caf.faces.output.FormattedText'>
                 <property name='id' value='htmlOutputText20' />
+                <property name='style' value='text-align: justify;' />
                 <property name='value' value='#{me.jueAct}' />
               </control>
             </control>
@@ -239,6 +244,7 @@
               <property name='id' value='staticCell13' />
               <control component-type='com.webmethods.caf.faces.output.FormattedText' renderer-type='com.webmethods.caf.faces.output.FormattedText'>
                 <property name='id' value='htmlOutputText24' />
+                <property name='style' value='text-align: justify;' />
                 <property name='value' value='#{me.vieAct}' />
               </control>
             </control>
@@ -273,6 +279,7 @@
               <property name='id' value='staticCell9' />
               <control component-type='com.webmethods.caf.faces.output.FormattedText' renderer-type='com.webmethods.caf.faces.output.FormattedText'>
                 <property name='id' value='htmlOutputText28' />
+                <property name='style' value='text-align: justify;' />
                 <property name='value' value='#{me.sabAct}' />
               </control>
             </control>

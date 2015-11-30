@@ -58,40 +58,43 @@ public class CalendarioDefaultviewView  extends   com.webmethods.caf.faces.bean.
 	public String initialize() {
 		try {
 			
-			this.getGeneraCalendario().getParameters().getGeneraCalendario().getGeneraCalendario().getEntrada().setAnyo(this.getCalendario().getAnyo());
-			this.getGeneraCalendario().getParameters().getGeneraCalendario().getGeneraCalendario().getEntrada().setMes(this.getCalendario().getMes());
-			this.getGeneraCalendario().refresh();
-			 int month = Integer.parseInt(this.getCalendario().getMes());
-			 String monthString;
-		        switch (month) {
-		            case 1:  monthString = "Enero";
-		                     break;
-		            case 2:  monthString = "Febrero";
-		                     break;
-		            case 3:  monthString = "Marzo";
-		                     break;
-		            case 4:  monthString = "Abril";
-		                     break;
-		            case 5:  monthString = "Mayo";
-		                     break;
-		            case 6:  monthString = "Junio";
-		                     break;
-		            case 7:  monthString = "Julio";
-		                     break;
-		            case 8:  monthString = "Agosto";
-		                     break;
-		            case 9:  monthString = "Septiembre";
-		                     break;
-		            case 10: monthString = "Octubre";
-		                     break;
-		            case 11: monthString = "Noviembre";
-		                     break;
-		            case 12: monthString = "Deciembre";
-		                     break;
-		            default: monthString = "valor invalido";
-		                     break;
-		        }
-		        this.setNmes(monthString);
+			if ((this.getCalendario().getAnyo() != null && !this.getCalendario().equals("")) && (this.getCalendario().getMes() != null && !this.getCalendario().getMes().equals(""))) {
+				
+				this.getGeneraCalendario().getParameters().getGeneraCalendario().getGeneraCalendario().getEntrada().setAnyo(this.getCalendario().getAnyo());
+				this.getGeneraCalendario().getParameters().getGeneraCalendario().getGeneraCalendario().getEntrada().setMes(this.getCalendario().getMes());
+				this.getGeneraCalendario().refresh();
+				 int month = Integer.parseInt(this.getCalendario().getMes());
+				 String monthString;
+			        switch (month) {
+			            case 1:  monthString = "Enero";
+			                     break;
+			            case 2:  monthString = "Febrero";
+			                     break;
+			            case 3:  monthString = "Marzo";
+			                     break;
+			            case 4:  monthString = "Abril";
+			                     break;
+			            case 5:  monthString = "Mayo";
+			                     break;
+			            case 6:  monthString = "Junio";
+			                     break;
+			            case 7:  monthString = "Julio";
+			                     break;
+			            case 8:  monthString = "Agosto";
+			                     break;
+			            case 9:  monthString = "Septiembre";
+			                     break;
+			            case 10: monthString = "Octubre";
+			                     break;
+			            case 11: monthString = "Noviembre";
+			                     break;
+			            case 12: monthString = "Deciembre";
+			                     break;
+			            default: monthString = "valor invalido";
+			                     break;
+			        }
+			        this.setNmes(monthString);
+			}
 		    resolveDataBinding(INITIALIZE_PROPERTY_BINDINGS, null, "initialize", true, false);
 		} catch (Exception e) {
 			error(e);

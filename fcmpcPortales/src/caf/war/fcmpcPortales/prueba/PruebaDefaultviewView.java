@@ -52,30 +52,43 @@ public class PruebaDefaultviewView  extends   com.webmethods.caf.faces.bean.Base
 	private java.lang.String mes;
 	private java.lang.String anyo;
 	private java.util.Date selectorPeriodo;
+	private transient caf.war.fcmpcPortales.prueba.PruebaDefaultviewView pruebaDefaultviewView = null;
+	private static final String[][] PRUEBADEFAULTVIEWVIEW_PROPERTY_BINDINGS = new String[][] {
+	};
 	/**
 	 * Initialize page
 	 */
 	public String initialize() {
 		try {
 			Date inicio = new Date();
+			setSelectorPeriodo(inicio);
+			
+			Calendar calendar = Calendar.getInstance();
+			calendar.setTime(new Date());
+			calendar.set(Calendar.MONTH, 2);
 			 Date fin = new Date();
-			 this.setMes("03");
-			 this.setAnyo("2015");
+
+			 this.setMes(Integer.toString(calendar.get(Calendar.MONTH) + 1));
+			 this.setAnyo(Integer.toString(calendar.get(Calendar.YEAR)));
+			
+
 			 SimpleDateFormat formateador = new SimpleDateFormat("dd/MM/yyyy");
-			 inicio = formateador.parse("01/03/2015");
-				fin = formateador.parse("10/03/2015");
+			 inicio = formateador.parse("01/" + this.getMes() + "/" + this.getAnyo());
+				fin = formateador.parse("31/" + this.getMes() + "/" + this.getAnyo());
 			//	this.getCalendar().setCalendarStartDate(inicio);
 			//	this.getCalendar().setCalendarEndDate(fin);
 		//		this.getCalendar().setInitialDate(inicio);
-			 inicio = formateador.parse("11/03/2015");
-				fin = formateador.parse("16/03/2015");
+			 //inicio = formateador.parse("11/03/2015");
+				//fin = formateador.parse("16/03/2015");
 			com.webmethods.caf.faces.data.calendar.CalendarEvent[] une= new com.webmethods.caf.faces.data.calendar.CalendarEvent[2]  ;
 			une[0] = com.webmethods.caf.faces.data.calendar.CalendarEvent.create(inicio, fin, true, "inicio", "Este es el dato", "valido");
-			 inicio = formateador.parse("23/03/2015");
-				fin = formateador.parse("26/03/2015");
-			une[1] = com.webmethods.caf.faces.data.calendar.CalendarEvent.create(inicio, fin, true, "homero", "Cualquier Dato", "valido");
+			 //inicio = formateador.parse("23/03/2015");
+				//fin = formateador.parse("26/03/2015");
+			//une[1] = com.webmethods.caf.faces.data.calendar.CalendarEvent.create(inicio, fin, true, "homero", "Cualquier Dato", "valido");
 	//		this.getCalendar().setEvents(une);
 	//		this.getCalendar().setEventVar("une");
+	 
+
 		    resolveDataBinding(INITIALIZE_PROPERTY_BINDINGS, null, "initialize", true, false);
 		} catch (Exception e) {
 			error(e);
@@ -157,6 +170,7 @@ public class PruebaDefaultviewView  extends   com.webmethods.caf.faces.bean.Base
 	    
 	    setMes(Integer.toString(calendar.get(Calendar.MONTH) + 1));
 	    setAnyo(Integer.toString(calendar.get(Calendar.YEAR)));
+	    //this.initialize();
 	    
 		return null;
 	}
@@ -168,6 +182,19 @@ public class PruebaDefaultviewView  extends   com.webmethods.caf.faces.bean.Base
 
 	public void setSelectorPeriodo(java.util.Date selectorPeriodo)  {
 		this.selectorPeriodo = selectorPeriodo;
+	}
+
+	public caf.war.fcmpcPortales.prueba.PruebaDefaultviewView getPruebaDefaultviewView()  {
+		if (pruebaDefaultviewView == null) {
+		    pruebaDefaultviewView = (caf.war.fcmpcPortales.prueba.PruebaDefaultviewView)resolveExpression("#{PruebaDefaultviewView}");
+		}
+	
+	    resolveDataBinding(PRUEBADEFAULTVIEWVIEW_PROPERTY_BINDINGS, pruebaDefaultviewView, "pruebaDefaultviewView", false, false);
+		return pruebaDefaultviewView;
+	}
+
+	public void setPruebaDefaultviewView(caf.war.fcmpcPortales.prueba.PruebaDefaultviewView pruebaDefaultviewView)  {
+		this.pruebaDefaultviewView = pruebaDefaultviewView;
 	}
 
 	/**
